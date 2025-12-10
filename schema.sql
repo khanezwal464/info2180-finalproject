@@ -28,7 +28,8 @@ CREATE TABLE `users` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO users VALUES (NULL, 'Lynne', 'Taylor', 'taylyn73265', 'lynnetaylor@gmail.com', 'user', NOW(),
-(NULL, 'Alex', 'Robin', '74fredrick!', 'alrobin@gmail.com', 'user', NOW(),
-(NULL, 'Kenzie', 'McDonald', 'ruby4867!', 'kenzie.mcdonald3@gmail.com', 'user', NOW();
+INSERT INTO users (firstname, lastname, password, email, role) VALUES 
+  ('Lynne', 'Taylor', 'taylyn73265', 'lynnetaylor@gmail.com', 'user'),
+  ('Alex', 'Robin', '74fredrick!', 'alrobin@gmail.com', 'user'),
+  ('Kenzie', 'McDonald', 'ruby4867!', 'kenzie.mcdonald3@gmail.com', 'user');
 
