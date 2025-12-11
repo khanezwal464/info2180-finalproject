@@ -32,9 +32,9 @@
                   <td>' . htmlspecialchars($row['role']) . '</td>
                   <td>' . htmlspecialchars($row['date_time']) . '</td>
                   </tr>';
-              }
-                echo '</tbody></table>';
-            } 
+          }
+            echo '</tbody></table>';
+            
   
   } catch (PDOException $e) {
       die("Connection failed: " . $e->getMessage());
