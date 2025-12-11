@@ -1,3 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <meta charset="utf-8">
+	<title>Users List</title>
+
+  <link href="view_users.css" type="text/css" rel="stylesheet"/>
+	<script src="view_users.js" type="text/javascript"></script>
+  
+</head>
+<body>
+
+  <header>
+    <h1>Dolphin CRM</h1>
+  </header>
+
+
+  
+</body>
+  
+</html>
+
+
 <?php
 
   $host = 'localhost';
