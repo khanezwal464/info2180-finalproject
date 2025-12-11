@@ -52,7 +52,7 @@
 		</div>
 
 		<?php
-	    echo '<table class="userlookup">
+	    echo '<table class="users">
 	          <thead>
 	          <tr>
 	          <th>Name</th>
