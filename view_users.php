@@ -16,7 +16,7 @@
   </header>
 
 	<div class="container">
-		<div id="sidebar">
+		<div class="sidebar">
 			<a link href="">Home</a>
 			<a link href="">New Contact</a>
 			<a link href="">Users</a>
@@ -45,9 +45,11 @@
 	?>
 
 
-	<div id="table">
-		<h2>Users</h2>
-		<button id="adduser">Add User</button>
+	<div class="table">
+		<div class="t_header">
+			<h2>Users</h2>
+			<button id="adduser">Add User</button>
+		</div>
 
 		<?php
 	    echo '<table class="userlookup">
