@@ -29,10 +29,18 @@ header {
 
 .userlookup {
   background-color: white;
+  border-radius: 10px;
+  outline-style: solid;
+  outline-color: #DBD9D9;
 }
 
 .table th, .table td {
+  border: 1px solid #E0E0E0;
   padding: 10px 40px;
+}
+
+.table th {
+  background-color: #E0E0E0;
 }
 
 .t_header {
