@@ -31,9 +31,10 @@ INSERT INTO users (firstname, lastname, password, email, role) VALUES
   ('Alex', 'Robin', 'password123', 'admin@project2.com', 'Admin'),
   ('Lynne', 'Taylor', 'taylyn73265', 'lynnetaylor@gmail.com', 'Member'),
   ('Kenzie', 'McDonald', 'ruby4867!', 'kenzie.mcdonald3@gmail.com', 'Member');
-SELECT LAST_INSERT_ID();
+
 
 -- Contacts Table
+DROP TABLE IF EXISTS contacts;
 CREATE TABLE `contacts` (
   `id` int NOT NULL auto_increment,
   `title` varchar(6) NOT NULL,
@@ -52,4 +53,20 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) VALUES 
-  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', 'RealCompCo', 'Support', last_insert_id(), 1);
+  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', 'RealCompCo', 'Support', 3, 1);
+
+
+-- Notes Table
+DROP TABLE IF EXISTS notes;
+CREATE TABLE `notes` (
+  `id` int NOT NULL auto_increment,
+  `contact_id` int NOT NULL default '0',
+  `comment` text NOT NULL,
+  `created_by` int NOT NULL default '0',
+  `created_at` datetime NOT NULL default current_timestamp,
+  
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO notes (contact_id, comment, created_by) VALUES 
+  ('1', 'Contact made', '1');
