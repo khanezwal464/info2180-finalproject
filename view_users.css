@@ -5,3 +5,9 @@ header {
   font-size: 7px;
   padding: 5px;
 }
+
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  color: #090930;
+}
