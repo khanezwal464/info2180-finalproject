@@ -28,9 +28,11 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO users (firstname, lastname, password, email, role) VALUES 
-  ('Alex', 'Robin', 'password123', 'admin@project2.com', 'Admin'),
-  ('Lynne', 'Taylor', 'taylyn73265', 'lynnetaylor@gmail.com', 'Member'),
-  ('Kenzie', 'McDonald', 'ruby4867!', 'kenzie.mcdonald3@gmail.com', 'Member');
+  ('Alex', 'Robin', SHA2('password123', 64), 'admin@project2.com', 'Admin'),
+  ('Lynne', 'Taylor', SHA2('taylyn73265', 64), 'lynnetaylor@gmail.com', 'Member'),
+  ('Kenzie', 'McDonald', SHA2('ruby4867!', 64), 'kenzie.mcdonald3@gmail.com', 'Member');
+  ('Ryan', 'Williams', SHA2('ryan@8365', 64), 'willryan12@gmail.com', 'Member');
+  ('Eve', 'Anderson', SHA2('fwf25dsh#', 64), 'eveanderson@gmail.com', 'Member');
 
 
 -- Contacts Table
@@ -53,7 +55,12 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) VALUES 
-  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', 'RealCompCo', 'Support', 3, 1);
+  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', 'Real Company ', 'Sales Lead', 3, 1),
+  ('Mr', 'Fredrick', 'Gayle', 'fgayle@gmail.com', '876-135-2468', 'Real Company', 'Support', 4, 1),
+  ('Mr', 'Zane', 'Periwinkle', 'zane.peri@gmail.com', '876-246-1357', 'Fun Co', 'Support', 2, 1),
+  ('Ms', 'Andrine', 'Thompson', 'andrinethompson@gmail.com', '876-147-2580', 'Fun Co', 'Sales Lead', 2, 1),
+  ('Mrs', 'Nevah', 'Havendale', 'nevah.havendale@gmail.com', '876-470-1470', 'Fun Co', 'Support', 3, 1);
+
 
 
 -- Notes Table
@@ -69,4 +76,5 @@ CREATE TABLE `notes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO notes (contact_id, comment, created_by) VALUES 
-  ('1', 'Contact made', '1');
+  ('1', 'Test text for a note added by a user', '3'),
+  ('3', 'More test text for a note added by a user', '2');
