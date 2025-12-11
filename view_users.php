@@ -15,11 +15,12 @@
     <h1>Dolphin CRM</h1>
   </header>
 
-
-  
-</body>
-  
-</html>
+	<div id="sidebar">
+		<a link href="">Home</a>
+		<a link href="">New Contact</a>
+		<a link href="">Users</a>
+		<a link href="">Logout</a>
+	</div>
 
 
 <?php
@@ -37,32 +38,46 @@
 
     $stmt = $conn->query("SELECT firstname, lastname, email, role, date_time FROM users");
 
-    echo '<table class="userlookup">
-          <thead>
-          <tr>
-          <th>Name</th>
-          <th>Email</th>
-          <th>Role</th>
-          <th>Created</th>
-          </tr>
-          </thead>
-          <tbody>';
-          
-          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $name = $row['firstname'] . ' ' . $row['lastname'];
-            echo '<tr>
-                  <td>' . htmlspecialchars($name) . '</td>
-                  <td>' . htmlspecialchars($row['email']) . '</td>
-                  <td>' . htmlspecialchars($row['role']) . '</td>
-                  <td>' . htmlspecialchars($row['date_time']) . '</td>
-                  </tr>';
-          }
-            echo '</tbody></table>';
-            
+	} catch (PDOException $e) {
+	  die("Connection failed: " . $e->getMessage());
+}
+	?>
+
+	  
+	<!DOCTYPE html>
+	<html>
+	<body>
+
+	<div id="table">
+		<h2>Users</h2>
+		<button id="adduser">Add User</button>
+
+		<?php
+	    echo '<table class="userlookup">
+	          <thead>
+	          <tr>
+	          <th>Name</th>
+	          <th>Email</th>
+	          <th>Role</th>
+	          <th>Created</th>
+	          </tr>
+	          </thead>
+	          <tbody>';
+	          
+	          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+	            $name = $row['firstname'] . ' ' . $row['lastname'];
+	            echo '<tr>
+	                  <td>' . htmlspecialchars($name) . '</td>
+	                  <td>' . htmlspecialchars($row['email']) . '</td>
+	                  <td>' . htmlspecialchars($row['role']) . '</td>
+	                  <td>' . htmlspecialchars($row['date_time']) . '</td>
+	                  </tr>';
+	          }
+	            echo '</tbody></table>';
+	          ?>  
+	</div>
+		
+
+</body>
   
-  } catch (PDOException $e) {
-      die("Connection failed: " . $e->getMessage());
-  }
-
-?>
-
+</html>
