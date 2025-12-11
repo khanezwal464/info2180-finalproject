@@ -32,6 +32,7 @@ header {
   border-radius: 10px;
   outline-style: solid;
   outline-color: #DBD9D9;
+  padding: 15px;
 }
 
 .table th, .table td {
