@@ -6,14 +6,18 @@ header {
   padding: 5px;
 }
 
-#sidebar {
+.container {
   display: flex;
+}
+
+#sidebar {
   flex-direction: column;
   color: #090930;
-  width: 20%;
+  width: 70px;
 }
 
 #table {
   flex: 1;
+  padding: 15px;
 }
   
