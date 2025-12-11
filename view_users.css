@@ -32,13 +32,13 @@ header {
   outline-style: solid;
   outline-color: #DBD9D9;
   padding: 15px;
-  border: 1px solid #E0E0E0;
   border-radius: 10px;
   border-collapse: seperate;
   border-spacing: 0;
 }
 
 .table th, .table td {
+  border: 1px solid #E0E0E0;
   padding: 10px 50px;
 }
 
