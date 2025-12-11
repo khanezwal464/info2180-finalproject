@@ -25,7 +25,7 @@
           <tbody>';
           
           while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            $name = $row['firstname'] . ' ' . $row['lastname']
+            $name = $row['firstname'] . ' ' . $row['lastname'];
             echo '<tr>
                   <td>' . htmlspecialchars($name) . '</td>
                   <td>' . htmlspecialchars($row['email']) . '</td>
