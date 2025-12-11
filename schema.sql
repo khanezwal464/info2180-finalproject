@@ -52,4 +52,4 @@ CREATE TABLE `contacts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO contacts (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by) VALUES 
-  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', RealCompCo, 'Support', last_insert_id(), 1);
+  ('Mrs', 'Gwen', 'Claire', 'gwen.claire@gmail.com', '876-123-4567', 'RealCompCo', 'Support', last_insert_id(), 1);
