@@ -10,14 +10,20 @@ header {
   display: flex;
 }
 
-#sidebar {
+.sidebar {
   flex-direction: column;
   color: #090930;
   width: 70px;
 }
 
-#table {
+.table {
   flex: 1;
   padding: 15px;
 }
-  
+
+.t_header {
+  display: flex;
+  justify-content: space-between;
+  align-iems: center;
+  margin-bottom: 10px;
+}
