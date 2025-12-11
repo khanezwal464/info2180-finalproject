@@ -10,4 +10,10 @@ header {
   display: flex;
   flex-direction: column;
   color: #090930;
+  width: 20%;
 }
+
+#table {
+  flex: 1;
+}
+  
