@@ -3,6 +3,7 @@ header {
   color: white;
   background-color: #090930;
   font-size: 7px;
+  padding: 5px;
 }
 
 .container {
@@ -22,6 +23,10 @@ header {
 .table {
   flex: 1;
   padding: 15px;
+}
+
+.table th, .table td {
+  padding: 10px 20px;
 }
 
 .t_header {
