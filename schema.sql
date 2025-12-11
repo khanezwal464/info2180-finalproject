@@ -28,11 +28,11 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO users (firstname, lastname, password, email, role) VALUES 
-  ('Alex', 'Robin', SHA2('password123', 64), 'admin@project2.com', 'Admin'),
-  ('Lynne', 'Taylor', SHA2('taylyn73265', 64), 'lynnetaylor@gmail.com', 'Member'),
-  ('Kenzie', 'McDonald', SHA2('ruby4867!', 64), 'kenzie.mcdonald3@gmail.com', 'Member');
-  ('Ryan', 'Williams', SHA2('ryan@8365', 64), 'willryan12@gmail.com', 'Member');
-  ('Eve', 'Anderson', SHA2('fwf25dsh#', 64), 'eveanderson@gmail.com', 'Member');
+  ('Alex', 'Robin', SHA2('password123', 256), 'admin@project2.com', 'Admin'),
+  ('Lynne', 'Taylor', SHA2('taylyn73265', 256), 'lynnetaylor@gmail.com', 'Member'),
+  ('Kenzie', 'McDonald', SHA2('ruby4867!', 256), 'kenzie.mcdonald3@gmail.com', 'Member');
+  ('Ryan', 'Williams', SHA2('ryan@8365', 256), 'willryan12@gmail.com', 'Member');
+  ('Eve', 'Anderson', SHA2('fwf25dsh#', 256), 'eveanderson@gmail.com', 'Member');
 
 
 -- Contacts Table
