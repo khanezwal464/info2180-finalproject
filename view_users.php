@@ -15,12 +15,13 @@
     <h1>Dolphin CRM</h1>
   </header>
 
-	<div id="sidebar">
-		<a link href="">Home</a>
-		<a link href="">New Contact</a>
-		<a link href="">Users</a>
-		<a link href="">Logout</a>
-	</div>
+	<div class="container">
+		<div id="sidebar">
+			<a link href="">Home</a>
+			<a link href="">New Contact</a>
+			<a link href="">Users</a>
+			<a link href="">Logout</a>
+		</div>
 
 
 <?php
@@ -43,10 +44,6 @@
 }
 	?>
 
-	  
-	<!DOCTYPE html>
-	<html>
-	<body>
 
 	<div id="table">
 		<h2>Users</h2>
@@ -76,8 +73,7 @@
 	            echo '</tbody></table>';
 	          ?>  
 	</div>
-		
+	</div>	
 
-</body>
-  
+</body> 
 </html>
