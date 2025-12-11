@@ -23,6 +23,7 @@ header {
 .table {
   flex: 1;
   padding: 15px;
+  background-color: #E0E0E0;
 }
 
 .table th, .table td {
