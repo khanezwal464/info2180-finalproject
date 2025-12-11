@@ -29,7 +29,6 @@ header {
 
 .users {
   background-color: white;
-  border-radius: 10px;
   outline-style: solid;
   outline-color: #DBD9D9;
   padding: 15px;
@@ -39,6 +38,7 @@ header {
   border: 1px solid #E0E0E0;
   border-collapse: seperate;
   border-spacing: 0;
+  border-radius: 10px;
   padding: 10px 50px;
 }
 
