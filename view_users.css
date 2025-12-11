@@ -24,6 +24,11 @@ header {
   flex: 1;
   padding: 15px;
   background-color: #E0E0E0;
+  height: 800px;
+}
+
+.userlookup {
+  background-color: white;
 }
 
 .table th, .table td {
