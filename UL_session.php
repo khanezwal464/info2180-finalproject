@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['id'] = $user_data['id'];
                 $_SESSION['role'] = $user_data['role'];
                 
-                header("Location: index.php");
+                header("Location: dashboard.php");
                 die;
             } else {
                 echo "<script>alert('Incorrect username or password');</script>";
@@ -53,14 +53,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <header>
         <div class="Header">
-            <img src="dolphin.png" alt="Dolphin Logo" id="dolphin">
+            <img src="dph.png" alt="Dolphin Logo" id="dolphin">
             <h1>Dolphin CRM</h1>
         </div>
     </header>
     <main>
         <div id="form">
             <form method="post">
-                <h1>Login</h1>
+                <h1>User Login</h1>
                 <div class="input">
                     <input type="text" name="email" placeholder="Email"> 
                 </div>

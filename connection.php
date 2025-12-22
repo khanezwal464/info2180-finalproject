@@ -1,7 +1,7 @@
 <?php
 
 $dbhost = "localhost"; 
-$dbname = "dolphincrm"; 
+$dbname = "dolphin_crm"; 
 $dbuser = "root"; 
 $dbpass = ""; 
 

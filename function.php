@@ -17,7 +17,7 @@ function check_login($conn){
 
     else{
 
-    header("Location: login.php"); 
+    header("Location: UL_session.php"); 
     die;
     }
 }
