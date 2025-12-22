@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 $_SESSION['id'] = $user_data['id'];
                 $_SESSION['role'] = $user_data['role'];
                 
-                header("Location: dashboard.php");
+                header("Location: DASH.php");
                 die;
             } else {
                 echo "<script>alert('Incorrect username or password');</script>";
@@ -44,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="login.css" rel="stylesheet">
+    <link href="UL_styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
