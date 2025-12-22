@@ -3,7 +3,7 @@
 session_start();
 
 include("connection.php"); 
-include("functions.php");
+include("function.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
