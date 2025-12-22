@@ -12,7 +12,7 @@ else{
 }
 
 if($query == ''){
-    $filt = "SELECT * from Contacts";
+    $filt = "SELECT * from contacts";
 
     $result = mysqli_query($conn, $filt);
 
@@ -45,7 +45,7 @@ if($query == ''){
 <?php }
 
 elseif($query == 'Sales'|| $query == 'Support'){
-    $filt = "SELECT * from Contacts WHERE type LIKE ?";
+    $filt = "SELECT * from contacts WHERE type LIKE ?";
     $query = "%".strip_tags($_GET['filter'])."%";
     $statement = $conn->prepare($filt);
     $statement ->bind_param("s",$query);
@@ -82,7 +82,7 @@ elseif($query == 'Sales'|| $query == 'Support'){
 
 elseif($query == 'Assigned'){
     $sess = strip_tags($_SESSION['id']);
-    $filt = "SELECT * from Contacts WHERE Contacts.assigned_to = ?";
+    $filt = "SELECT * from contacts WHERE contacts.assigned_to = ?";
 
     $statement = $conn->prepare($filt);
     $statement ->bind_param("s",$sess);
