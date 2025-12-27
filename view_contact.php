@@ -137,7 +137,7 @@
 				
 				<div class="note_section">
 					<form method="GET" action="">
-						<input type="text" name="new_note" id="new_note" placeholder="Enter your text here">
+						<textarea type="text" name="new_note" id="new_note" placeholder="Enter your text here"></textarea>
 						<button type="submit" id="submit">Submit</button>
 					</form>
 				</div>
