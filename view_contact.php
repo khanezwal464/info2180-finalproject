@@ -44,7 +44,7 @@
 	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
 	
 	
-	$stmt = $pdo->prepare("SELECT firstname, lastname, email, telephone, company, assigned_to, created_by, updated_at FROM contacts WHERE email = :email"); 
+	$stmt = $conn->prepare("SELECT firstname, lastname, email, telephone, company, assigned_to, created_by, updated_at FROM contacts WHERE email = :email"); 
 	$stmt->execute([$email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
 
