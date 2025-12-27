@@ -52,6 +52,10 @@
 	$userStmt->execute(['id' => $contact['created_by']]); 
 	$creator = $userStmt->fetch(PDO::FETCH_ASSOC);
 
+	$assiStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
+	$assiStmt->execute(['id' => $contact['assigned_to']]); 
+	$assigned_user = $assiStmt->fetch(PDO::FETCH_ASSOC);
+
 	if ($contact)
 
 	?>
@@ -69,8 +73,8 @@
 			</div>
 			
 		  	<div class="buttons">
-				<button id="assign" onclick="">Assign</button>
-	      		<button id="switch" onclick="">Switch</button>
+				<button id="assign" onclick="">Assign to me </button>
+	      		<button id="switch" onclick="">Switch role</button>
 			</div>
 			
 		</div>
@@ -93,7 +97,7 @@
 
 			<div class="detail_item"> 
 				<label>Assigned to</label> 
-				<div><?= htmlspecialchars($contact['assigned_to']) ?></div> 
+				<div><?= htmlspecialchars($assigned_user['firstname'] . ' ' . $assigned_user['lastname']) ?></div> 
 			</div>
 		</div>
 	  
