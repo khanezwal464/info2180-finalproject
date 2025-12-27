@@ -36,7 +36,7 @@ require 'data_base.php';
 			$stmt->execute(['type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
 
 			//Allows updated info to be reflected upon refresh
-			header("Location: contact.php?id=" . $_POST['contact_id']); 
+			header("Location: view_contact.php?email=". urlencode($_POST['email']));
 			exit;
 
 		}
@@ -115,6 +115,7 @@ require 'data_base.php';
 		  	<div class="buttons">
 				<form method="POST">
 					<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>">
+					<input type="hidden" name="email" value="<?= $contact['email'] ?>">
 					<button id="assign" name="action" value="assign">Assign to me</button>
 		      		<button id="switch" name="action" value="switch">Switch to <?= htmlspecialchars($oppositeRole) ?> </button>
 				</form>
