@@ -1,5 +1,6 @@
 <?php
-echo password_hash('password123', PASSWORD_DEFAULT);
+$hash = '$2y$10$Xg6HrW0r4FBRoWvuKlYf3euwulrclgyancg89anAnkOVzDsd7kI2K'; 
+var_dump(password_verify('password123', $hash));
 
 session_start();
 
