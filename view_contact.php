@@ -59,16 +59,18 @@
   <div class="contact_page">
 	  
 		<div class="header_details">
-			<div class="top_row">
-				<h2><?= htmlspecialchars($contact['title']. ' ' . $contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+			<div class="contact_info">
+				<div class="top_row">
+					<h2><?= htmlspecialchars($contact['title']. ' ' . $contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+				</div>
+				
+	            <p><strong>Created On:</strong> <?= htmlspecialchars($contact['created_at']) ?> <strong>by:</strong> <?= htmlspecialchars($creator['firstname'] . ' ' . $creator['lastname']); ?> </p>
+	            <p><strong>Updated At:</strong> <?= htmlspecialchars($contact['updated_at']) ?></p>
 			</div>
 			
-            <p><strong>Created On:</strong> <?= htmlspecialchars($contact['created_at']) ?> <strong>by:</strong> <?= htmlspecialchars($creator['firstname'] . ' ' . $creator['lastname']); ?> </p>
-            <p><strong>Updated At:</strong> <?= htmlspecialchars($contact['updated_at']) ?></p>
-		
 		  	<div class="buttons">
-				<button onclick="">Assign</button>
-	      		<button onclick="">Switch</button>
+				<button id="assign" onclick="">Assign</button>
+	      		<button id="switch" onclick="">Switch</button>
 			</div>
 			
 		</div>
