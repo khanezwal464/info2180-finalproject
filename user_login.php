@@ -5,7 +5,7 @@ session_start();
 require("data_base.php"); 
 include("function.php");
 
-$hash = '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi'; 
+$hash = '$2y$10$Xg6HrW0r4FBRoWvuKlYf3euwulrclgyancg89anAnkOVzDsd7kI2K'; 
 var_dump(password_verify('password123', $hash));
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
