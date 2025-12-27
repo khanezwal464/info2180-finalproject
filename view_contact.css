@@ -124,6 +124,19 @@ header h1 {
   align-items: center;
 }
 
+.notes {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  outline-style: solid;
+  outline-color: #DBD9D9;
+  padding: 15px;
+  border-radius: 10px;
+  border-collapse: seperate;
+  border-spacing: 0;
+}
+
 /*------------ Button Styling ----------- */
 buttons {
   display: flex;
