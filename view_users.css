@@ -1,23 +1,72 @@
+/*Header Styling */
 header {
-  height: 35px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1a252f;
   color: white;
-  background-color: #090930;
-  font-size: 7px;
-  padding: 5px;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
+  z-index: 1000;
 }
 
-.container {
-  display: flex;
+header h1 {
+  font-size: 16px; 
+  font-weight: 400;       
+  letter-spacing: 0.5px;
+  font-size: 18px;
 }
+
+/* Main Container Styling */
+.container {
+  margin-left: 220px;
+  padding: 100px 40px;
+}
+
 
 .sidebar {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  width: 200px;
+  height: calc(100vh - 50px);
+  background-color: #ffffff;
+  border-right: 1px solid #e5e7eb;
+  
+  padding: 40px 20px 20px 20px; 
+  
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #090930;
-  width: 200px;
-  padding: 15px;
-  max-height: 200px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
+  transition: color 0.2s ease;
+  
+  /*Highlight text only */
+  width: fit-content; 
+  display: block;
+}
+
+.sidebar a:hover {
+  color: #4f46e5; 
+}
+
+/* THE SEPARATOR & LOGOUT SPACING */
+.sidebar a:last-child {
+  margin-top: 10px;    /* Gap between 'Users' and the line */
+  padding-top: 20px;   /* Gap between the line and 'Logout' text */
+  border-top: 1px solid #e5e7eb; /* Faint line between 'Users' and 'Logout'
+  
+  /* Ensuring the line spans the padding of the sidebar */
+  width: auto; 
+  display: block;
 }
 
 .table {
