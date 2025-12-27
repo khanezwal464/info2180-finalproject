@@ -23,7 +23,7 @@ if($query == ''){
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-    <table id = "table">
+    <table class = "table">
         <tr>
             <th>Name</th>
             <th>Email</th>
