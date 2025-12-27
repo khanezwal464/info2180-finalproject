@@ -93,7 +93,7 @@ main {
   flex-direction: row;
   margin-bottom: 10px;
   gap: 15px;
-  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .table_section {
@@ -113,12 +113,12 @@ main {
   height: 800px;
 }
 
-.table th, .table td {
+.table tr, .table td {
   border: 1px solid #E0E0E0;
   padding: 10px 50px;
 }
 
-.table th {
+.table tr {
   background-color: #E0E0E0;
 }
 
