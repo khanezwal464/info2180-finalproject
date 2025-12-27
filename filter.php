@@ -39,7 +39,9 @@ if($query == ''){
                 <td class = "email"><?=htmlspecialchars($row['email'])?></td>
                 <td><?=htmlspecialchars($row['company'])?></td>
                 <td class= "type"><?=htmlspecialchars($row['type'])?></td>
-                <td class = "link">View</td>
+                <td class = "link">
+                    <a href="view_contact.php?email=<?= $row['email'] ?>">View</a>
+                </td>
             </tr>
         <?php endforeach; ?>
     <?php endif; ?>
@@ -76,7 +78,9 @@ if($query == ''){
                 <td class = "email"><?=htmlspecialchars($row['email'])?></td>
                 <td><?=htmlspecialchars($row['company'])?></td>
                 <td class= "type"><?=htmlspecialchars($row['type'])?></td>
-                <td class = "link">View</td>
+                <td class = "link">
+                    <a href="view_contact.php?email=<?= $row['email'] ?>">View</a>
+                </td>
             </tr>
           <?php endforeach; ?>
         <?php endif; ?>
@@ -114,7 +118,9 @@ if($query == ''){
                 <td class = "email"><?=htmlspecialchars($row['email'])?></td>
                 <td><?=htmlspecialchars($row['company'])?></td>
                 <td class= "type"><?=htmlspecialchars($row['type'])?></td>
-                <td class = "link">View</td>
+                <td class = "link">
+                    <a href="view_contact.php?email=<?= $row['email'] ?>">View</a>
+                </td>
             </tr>
         <?php endforeach; ?>
       <?php endif; ?>
