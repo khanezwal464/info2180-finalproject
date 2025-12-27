@@ -10,6 +10,29 @@ require 'data_base.php';
 		header("Location: contact.php?id=" . $_POST['contact_id']); 
 		exit; 
 	}*/
+
+	//Switches contact's role
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+
+		if ($_POST['action'] === 'switch') {
+			$stmt = $conn->prepare("SELECT type FROM contacts WHERE id = :id"); 
+			$stmt->execute(['id' => $_POST['contact_id']]); 
+			$currentRole = $stmt->fetchColumn();
+
+			$newRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+
+			$stmt = $conn->prepare(" UPDATE contacts SET role = :role WHERE id = :contact_id "); 
+			$stmt->execute([ 'role' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
+
+			//Allows updated info to be reflected upon refresh
+			header("Location: contact.php?id=" . $_POST['contact_id']); 
+			exit;
+
+		}
+
+	}
+
+		
 ?>
 
 <!DOCTYPE html>
@@ -46,6 +69,10 @@ require 'data_base.php';
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	//To display opposite role on switch button
+	$currentRole = $contact['type']; 
+	$oppositeRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+
 	//Collecting user who created the contact
 	$userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
 	$userStmt->execute(['id' => $contact['created_by']]); 
@@ -78,8 +105,10 @@ require 'data_base.php';
 			</div>
 			
 		  	<div class="buttons">
-				<button id="assign" onclick="">Assign to me </button>
-	      		<button id="switch" onclick="">Switch role</button>
+				<form method="POST">
+					<button id="assign" name="action" value="assign">Assign to me</button>
+		      		<button id="switch" name="action" value="switch">Switch to <?= htmlspecialchars($oppositeRole) ?> </button>
+				</form>
 			</div>
 			
 		</div>
