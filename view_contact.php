@@ -42,7 +42,7 @@ require 'data_base.php';
 
 	//To display opposite role on switch button
 	$currentRole = $contact['type']; 
-	$oppositeRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+	$oppositeRole = ($currentRole === 'Sales Lead') ? 'Support' : 'Sales Lead';
 
 
 ?>
