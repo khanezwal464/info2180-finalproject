@@ -37,7 +37,7 @@ $user_data = check_login($conn);
             </div>
             
             <div id = "filterOp">
-                <img id = "filter" src="filter.png">
+                <img id = "filter" src="filter_icon.png">
                 <label for = "filterOp" id="function">Filter By: </label>
 
                 <p id = "General" class = "filter">All</p>
