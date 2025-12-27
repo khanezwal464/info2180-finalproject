@@ -176,10 +176,10 @@ header h1 {
 }
 
 .notes p {
-  padding-bottom: 10px;
+  margin-bottom: 5px;
 }
 
-input {
+textarea {
   background-color: white;
   height: 150px;
   width: 100%;
