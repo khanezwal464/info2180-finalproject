@@ -109,7 +109,7 @@
 		</div>
 
 		<div class="notes">
-			<h2>Notes</h2>
+			<h3>Notes</h3>
 
 			<?php if (empty($notes)): ?> 
 				<p>No notes available for this contact.</p> 
@@ -131,6 +131,13 @@
 				<?php endforeach; ?> 
 			
 			<?php endif; ?>
+
+			<div class="create_note">
+				<p>Add a note for <?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']); ?></p>
+				<input type="text" name="new_note" id="new_note" placeholder="Eg: Captain America">
+				<button type="submit" id="submit">Submit</button>
+			</div>
+			
 		</div>
 
 
