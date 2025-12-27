@@ -1,3 +1,4 @@
+<?php require("data_base.php"); ?>
 
 <!DOCTYPE html>
 <html>
