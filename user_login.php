@@ -5,7 +5,6 @@ session_start();
 require("data_base.php"); 
 include("function.php");
 
-var_dump($_POST);
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
@@ -16,12 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //$i_hash = hash('sha256', $password);
 
     if (!empty($email) && !empty($password)) {
-        $stmt = $conn -> prepare("SELECT * FROM Users WHERE email =? LIMIT 1 ");
+        $stmt = $conn -> prepare("SELECT * FROM users WHERE email =? LIMIT 1 ");
         $stmt->execute([$email]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
             $user_data = $result;
+            var_dump($user_data['password']);
+            
                 
           //if ($user_data['password'] === $i_hash || password_verify($password, $hash)) {
             if (password_verify($password, $user_data['password'])) {
