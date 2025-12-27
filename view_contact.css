@@ -90,6 +90,11 @@ header h1 {
   align-items: flex-start; 
 }
 
+.contact_info {
+  display: flex; 
+  flex-direction: column;
+}
+
 .other_details {
   background-color: white;
   outline-style: solid;
@@ -117,7 +122,7 @@ header h1 {
 /*------------ Button Styling ----------- */
 button {
   display: flex;
-  background-color: #5d5fef; 
+  flex-direction: row;
   color: white;
   border: none;
   padding: 10px 25px;
