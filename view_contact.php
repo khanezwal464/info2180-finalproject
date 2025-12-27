@@ -19,7 +19,7 @@ require 'data_base.php';
 			$stmt->execute(['id' => $_POST['contact_id']]); 
 			$currentRole = $stmt->fetchColumn();
 
-			$newRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+			$newRole = ($currentRole === 'Sales Lead') ? 'Support' : 'Sales Lead';
 
 			$stmt = $conn->prepare(" UPDATE contacts SET type = :type WHERE id = :contact_id "); 
 			$stmt->execute(['type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
