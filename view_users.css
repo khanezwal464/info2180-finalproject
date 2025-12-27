@@ -117,7 +117,7 @@ header h1 {
 .t_header {
   display: flex;
   justify-content: space-between;
-  align-iems: center;
+  align-items:center;
   margin-bottom: 10px;
 }
 
