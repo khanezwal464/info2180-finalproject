@@ -81,7 +81,7 @@ header h1 {
   display: block;
 }
 
-/*------------ Main Details Styling ----------- */
+/*------------ Contact Details Styling ----------- */
 .header_details {
   display: flex;
   padding: 10px;
@@ -124,6 +124,7 @@ header h1 {
   align-items: center;
 }
 
+/*------------ Note Details Styling ----------- */
 .notes {
   display: flex;
   flex-direction: column;
@@ -154,6 +155,15 @@ header h1 {
 .note_item label { 
   margin-bottom: 5px; color: black;
   font-size: 15px
+}
+
+.notes create_note {
+  background-color: #555;
+}
+
+input {
+  background-color: white;
+  height: 150px;
 }
 
 /*------------ Button Styling ----------- */
