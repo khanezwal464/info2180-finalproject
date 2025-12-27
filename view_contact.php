@@ -1,3 +1,17 @@
+<?php 
+require 'data_base.php';
+
+	/*Saves new note to database 
+	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['new_note'])) { 
+		$stmt = $conn->prepare(" INSERT INTO notes (contact_id, created_by, comment, created_at) VALUES (:contact_id, :created_by, :comment, NOW()) "); 
+		$stmt->execute([ 'contact_id' => $_POST['contact_id'], 'created_by' => $_SESSION['user_id'], 'comment' => $_POST['new_note'] ]); 
+		
+		// Redirect to avoid resubmitting on refresh 
+		header("Location: contact.php?id=" . $_POST['contact_id']); 
+		exit; 
+	}*/
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,22 +35,6 @@
 
 
 <?php
-
-  $host = 'localhost';
-  $username = 'finalproj_user';
-  $password = 'password123';
-  $dbname = 'dolphin_crm';
-
-  
-  try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-      
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-	} catch (PDOException $e) {
-	  die("Connection failed: " . $e->getMessage());
-}
-
 
 	$email = $_GET['email'];
 	
@@ -136,8 +134,9 @@
 				<p>Add a note for <?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']); ?></p>
 				
 				<div class="note_section">
-					<form method="GET" action="">
+					<form method="POST">
 						<textarea type="text" name="new_note" id="new_note" placeholder="Enter your text here"></textarea>
+						<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>"> <!-- Ensures note is added to correct contact -->
 						<button type="submit" id="submit">Submit</button>
 					</form>
 				</div>
