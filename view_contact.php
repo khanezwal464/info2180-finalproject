@@ -10,30 +10,8 @@ require 'data_base.php';
 		header("Location: contact.php?id=" . $_POST['contact_id']); 
 		exit; 
 	}*/
-
-	//Switches contact's role
-	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
-
-		if ($_POST['action'] === 'switch') {
-			$stmt = $conn->prepare("SELECT type FROM contacts WHERE id = :id"); 
-			$stmt->execute(['id' => $_POST['contact_id']]); 
-			$currentRole = $stmt->fetchColumn();
-
-			$newRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
-
-			$stmt = $conn->prepare(" UPDATE contacts SET type = :role WHERE id = :contact_id "); 
-			$stmt->execute([ 'type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
-
-			//Allows updated info to be reflected upon refresh
-			header("Location: contact.php?id=" . $_POST['contact_id']); 
-			exit;
-
-		}
-
-	}
-
-		
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -68,6 +46,28 @@ require 'data_base.php';
 	$stmt = $conn->prepare("SELECT * FROM contacts WHERE email = :email"); 
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
+
+
+	//Switches contact's role
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+
+		if ($_POST['action'] === 'switch') {
+			$stmt = $conn->prepare("SELECT type FROM contacts WHERE id = :id"); 
+			$stmt->execute(['id' => $_POST['contact_id']]); 
+			$currentRole = $stmt->fetchColumn();
+
+			$newRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+
+			$stmt = $conn->prepare(" UPDATE contacts SET type = :role WHERE id = :contact_id "); 
+			$stmt->execute([ 'type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
+
+			//Allows updated info to be reflected upon refresh
+			header("Location: contact.php?id=" . $_POST['contact_id']); 
+			exit;
+
+		}
+
+	}
 
 	//To display opposite role on switch button
 	$currentRole = $contact['type']; 
