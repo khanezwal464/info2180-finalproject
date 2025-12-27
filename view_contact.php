@@ -40,6 +40,8 @@ require 'data_base.php';
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	var_dump($contact['type']); exit;
+
 	//To display opposite role on switch button
 	$currentRole = $contact['type']; 
 	$oppositeRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
