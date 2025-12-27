@@ -43,10 +43,7 @@ require 'data_base.php';
 	//To display opposite role on switch button
 	$currentRole = $contact['type']; 
 	$oppositeRole = ($currentRole === 'Sales Lead') ? 'Support' : 'Sales Lead';
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -68,14 +65,7 @@ require 'data_base.php';
 		<div class="sidebar">
 			<?php include'dolph_nav.php';?>
 		</div>
-
-
 <?php
-
-
-	
-	
-
 
 	//Collecting user who created the contact
 	$userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
@@ -109,7 +99,7 @@ require 'data_base.php';
 			</div>
 			
 		  	<div class="buttons">
-				<?php echo "<pre>DEBUG: Current role = " . htmlspecialchars($contact['type']) . "</pre>"; ?>
+				
 				<form method="POST">
 					<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>">
 					<input type="hidden" name="email" value="<?= $contact['email'] ?>">
@@ -180,8 +170,6 @@ require 'data_base.php';
 			</div>
 			
 		</div>
-
-
 		
 	</div>	
 
