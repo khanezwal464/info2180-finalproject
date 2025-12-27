@@ -14,9 +14,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (!empty($email) && !empty($password)) {
         $stmt = $conn -> prepare("SELECT * FROM Users WHERE email =? LIMIT 1 ");
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $stmt->execute([$email]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result && mysqli_num_rows($result) == 1) {
             $user_data = mysqli_fetch_assoc($result);
