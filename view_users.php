@@ -6,7 +6,7 @@
 	<title>Users List</title>
 
   <link href="view_users.css" type="text/css" rel="stylesheet"/>
-	<script src="view_users.js" type="text/javascript"></script>
+	
   
 </head>
 <body>
@@ -17,10 +17,7 @@
 
 	<div class="container">
 		<div class="sidebar">
-			<a link href="">Home</a>
-			<a link href="">New Contact</a>
-			<a link href="">Users</a>
-			<a link href="">Logout</a>
+			<?php include'dolph_nav.php';?>
 		</div>
 
 
@@ -48,7 +45,7 @@
 	<div class="table">
 		<div class="t_header">
 			<h2>Users</h2>
-			<button id="adduser">Add User</button>
+			<button onclick="window.location.href='add_user.php'">Add User</button>
 		</div>
 
 		<?php
