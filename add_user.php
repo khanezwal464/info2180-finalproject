@@ -4,7 +4,7 @@ require_once 'data_base.php';
 //admin_req();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $stmt = $pdo->prepare(
+    $stmt = $conn->prepare(
         "INSERT INTO users (firstname, lastname, email, password, role) VALUES (?,?,?,?,?)"
     );
     $stmt->execute([
