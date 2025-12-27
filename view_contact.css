@@ -86,7 +86,8 @@ header h1 {
   flex: 1;
   padding: 10px;
   background-color: #E0E0E0;
-  height: 50px;
+  justify-content: space-between; 
+  align-items: flex-start; 
 }
 
 .other_details {
@@ -106,4 +107,20 @@ header h1 {
 
 .table th {
   background-color: #E0E0E0;
+}
+
+/*------------ Button Styling ----------- */
+button {
+  background-color: #5d5fef; 
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:hover {
+  background-color: #4a4cdb;
 }
