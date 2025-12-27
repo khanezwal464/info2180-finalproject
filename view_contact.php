@@ -59,7 +59,10 @@
   <div class="contact_page">
 	  
 		<div class="header_details">
-			<h2><?= htmlspecialchars($contact['title']. ' ' . $contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+			<div class="top_row">
+				<h2><?= htmlspecialchars($contact['title']. ' ' . $contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+			</div>
+			
             <p><strong>Created On:</strong> <?= htmlspecialchars($contact['created_at']) ?> <strong>by:</strong> <?= htmlspecialchars($creator['firstname'] . ' ' . $creator['lastname']); ?> </p>
             <p><strong>Updated At:</strong> <?= htmlspecialchars($contact['updated_at']) ?></p>
 		
