@@ -19,7 +19,7 @@ CREATE TABLE `users` (
   `id` int NOT NULL auto_increment,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
-  `password` varchar(40) NOT NULL,
+  `password` varchar(255) NOT NULL,
   `email` varchar(40) NOT NULL,
   `role` enum('Admin', 'Member') NOT NULL,
   `date_time` datetime NOT NULL default current_timestamp,
