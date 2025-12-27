@@ -136,9 +136,12 @@
 				<p>Add a note for <?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']); ?></p>
 				
 				<div class="note_section">
-					<input type="text" name="new_note" id="new_note" placeholder="Enter your text here">
+					<form method="GET" action="">
+						<input type="text" name="new_note" id="new_note" placeholder="Enter your text here">
+						<button type="submit" id="submit">Submit</button>
+					</form>
 				</div>
-				<button type="submit" id="submit">Submit</button>
+				
 			</div>
 			
 		</div>
