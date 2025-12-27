@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: white;
+   background-color: #E0E0E0;
 }
 
 /*------------ Header Styling ----------- */
@@ -79,4 +79,10 @@ main {
   /* Ensuring the line spans the padding of the sidebar */
   width: auto; 
   display: block;
+}
+
+/*------------ Table Styling ----------- */
+#head {
+  display: flex;
+  justify-content: space-between;
 }
