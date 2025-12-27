@@ -43,8 +43,9 @@ require 'data_base.php';
 
 	}
 
-
-
+	//To display opposite role on switch button
+	$currentRole = $contact['type']; 
+	$oppositeRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
 
 
 ?>
@@ -77,9 +78,7 @@ require 'data_base.php';
 
 	
 	
-	//To display opposite role on switch button
-	$currentRole = $contact['type']; 
-	$oppositeRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
+
 
 	//Collecting user who created the contact
 	$userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
