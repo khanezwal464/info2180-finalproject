@@ -120,10 +120,9 @@ header h1 {
 }
 
 /*------------ Button Styling ----------- */
-button {
+buttons {
   display: flex;
-  flex-direction: row;
-  color: white;
+  color: black;
   border: none;
   padding: 10px 25px;
   border-radius: 4px;
@@ -138,3 +137,10 @@ button:hover {
   background-color: #4a4cdb;
 }
 
+#assign {
+  background-color: #27B04F;
+}
+
+#switch {
+  background-color: #DEE368;
+}
