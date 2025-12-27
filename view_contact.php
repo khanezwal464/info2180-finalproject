@@ -33,22 +33,55 @@
       
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $conn->query("SELECT firstname, lastname, email, role, date_time FROM users");
-
 	} catch (PDOException $e) {
 	  die("Connection failed: " . $e->getMessage());
 }
+
+
+	$email = $_GET['email'];
+	
+	//Sanitisation of user input
+	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
+	
+	
+	$stmt = $pdo->prepare("SELECT firstname, lastname, email, telephone, company, assigned_to, created_by, updated_at FROM contacts WHERE email = :email"); 
+	$stmt->execute([$email]); 
+	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	if ($contact)
+
 	?>
 
-  <div class="contact">
-		<div class="details">
-			
+  <div class="contact_page">
+		<div class="header_details">
 			<button onclick="">Assign</button>
-      <button onclick="">Switch</button>
+      		<button onclick="">Switch</button>
 		</div>
 
+	  		<?php
+	    echo '<table class="other_details">
+	          <thead>
+	          <tr>
+	          <th>Name</th>
+	          <th>Created By</th>
+	          <th>Updated At</th>
+	          </tr>
+	          </thead>
+	          <tbody>';
+	          
+	          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+				$name = $row['firstname'] . ' ' . $row['lastname'];
+	            echo '<tr>
+	                  <td>' . htmlspecialchars($name) . '</td>
+	                  <td>' . htmlspecialchars($row['created_by']) . '</td>
+	                  <td>' . htmlspecialchars($row['updated_at']) . '</td>
+	                  </tr>';
+	          }
+	            echo '</tbody></table>';
+	          ?>
+
 		<?php
-	    echo '<table class="details">
+	    echo '<table class="other_details">
 	          <thead>
 	          <tr>
 	          <th>Email</th>
@@ -70,6 +103,13 @@
 	            echo '</tbody></table>';
 	          ?>  
 	</div>
+
+<?php
+	else:
+	    echo "Contact not found.";
+	endif;
+?>
+
 	</div>	
 
 </body> 
