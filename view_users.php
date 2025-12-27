@@ -6,7 +6,6 @@
 	<title>Users List</title>
 
   <link href="view_users.css" type="text/css" rel="stylesheet"/>
-	<script src="view_users.js" type="text/javascript"></script>
   
 </head>
 <body>
