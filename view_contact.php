@@ -43,24 +43,36 @@
 	//Sanitisation of user input
 	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
 	
-	
+	//Collecting contact details
 	$stmt = $conn->prepare("SELECT * FROM contacts WHERE email = :email"); 
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
 
+	//Collecting user who created the contact
 	$userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
 	$userStmt->execute(['id' => $contact['created_by']]); 
 	$creator = $userStmt->fetch(PDO::FETCH_ASSOC);
 
+	//Collect user the contact is assigned to
 	$assiStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
 	$assiStmt->execute(['id' => $contact['assigned_to']]); 
 	$assigned_user = $assiStmt->fetch(PDO::FETCH_ASSOC);
+
+	//Collect notes for the contact 
+	$noteStmt = $conn->prepare("SELECT * FROM notes WHERE contact_id = :contact_id"); 
+	$noteStmt->execute(['contact_id' => $contact['id']]); 
+	$notes = $noteStmt->fetch(PDO::FETCH_ASSOC);
+
+	//Collect creator of note
+	$noteUserStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
+	$noteUserStmt->execute(['id' => $notes['created_by']]); 
+	$note_creator = $noteStmt->fetch(PDO::FETCH_ASSOC);
 
 	if ($contact)
 
 	?>
 
-  <div class="contact_page">
+  	<div class="contact_page">
 	  
 		<div class="header_details">
 			<div class="contact_info">
@@ -100,7 +112,27 @@
 				<div><?= htmlspecialchars($assigned_user['firstname'] . ' ' . $assigned_user['lastname']) ?></div> 
 			</div>
 		</div>
-	  
+
+		<div class="notes">
+			<h2>Notes</h2>
+
+			<?php if (empty($notes)): ?> 
+				<p>No notes available for this contact.</p> 
+			<?php else: ?>
+
+				<?php foreach ($notes as $note): ?>
+				<div class="note_item"> 
+					<label><?= htmlspecialchars($note_creator['firstname'] . ' ' . $note_creator['lastname']) ?></label> 
+					<div><?= htmlspecialchars($note['comment']) ?></div> 
+					<div><?= htmlspecialchars($note['created_at']) ?></div> 
+				</div>
+				<?php endforeach; ?> 
+			
+			<?php endif; ?>
+		</div>
+
+
+		
 	</div>	
 
 </body> 
