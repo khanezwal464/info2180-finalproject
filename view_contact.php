@@ -75,27 +75,28 @@
 			
 		</div>
 	  
-		<?php
-	    echo '<table class="other_details">
-	          <thead>
-	          <tr>
-	          <th>Email</th>
-	          <th>Telephone</th>
-	          <th>Company</th>
-	          <th>Assigned To</th>
-	          </tr>
-	          </thead>
-			        <tbody>
-					  <tr>
-					  <td>' . htmlspecialchars($contact['email']) . '</td>
-	                  <td>' . htmlspecialchars($contact['telephone']) . '</td>
-	                  <td>' . htmlspecialchars($contact['company']) . '</td>
-	                  <td>' . htmlspecialchars($contact['assigned_to']) . '</td>
-	                  </tr>
-					</tbody>
-					</table>';
-	          ?>  
-	</div>
+		<div class="other_details"> 
+			<div class="detail_item"> 
+				<label>Email</label> 
+				<div><?= htmlspecialchars($contact['email']) ?></div> 
+			</div>
+
+			<div class="detail_item"> 
+				<label>Telephone</label> 
+				<div><?= htmlspecialchars($contact['telephone']) ?></div> 
+			</div>
+
+			<div class="detail_item"> 
+				<label>Company</label> 
+				<div><?= htmlspecialchars($contact['company']) ?></div> 
+			</div>
+
+			<div class="detail_item"> 
+				<label>Assigned to</label> 
+				<div><?= htmlspecialchars($contact['assigned_to']) ?></div> 
+			</div>
+		</div>
+	  
 	</div>	
 
 </body> 
