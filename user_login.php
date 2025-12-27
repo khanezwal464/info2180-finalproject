@@ -21,8 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if ($result) {
             $user_data = $result;
-            var_dump($user_data['password']);
-            
                 
           //if ($user_data['password'] === $i_hash || password_verify($password, $hash)) {
             if (password_verify($password, $user_data['password'])) {
