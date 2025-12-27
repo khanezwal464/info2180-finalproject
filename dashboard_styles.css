@@ -113,12 +113,12 @@ main {
   height: 800px;
 }
 
-.table tr, .table td {
+.table th, .table td {
   border: 1px solid #E0E0E0;
   padding: 10px 50px;
 }
 
-.table tr {
+.table th {
   background-color: #E0E0E0;
 }
 
