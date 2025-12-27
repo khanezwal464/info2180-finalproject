@@ -1,4 +1,12 @@
-/*Header Styling */
+/*------------ Base Styling ----------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/*------------ Header Styling ----------- */
 header {
   position: fixed;
   top: 0;
@@ -19,13 +27,19 @@ header h1 {
   font-size: 18px;
 }
 
-/* Main Container Styling */
+/*------------ Main Container Styling ----------- */
 .container {
   margin-left: 220px;
   padding: 100px 40px;
 }
 
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #1a252f;
+}
 
+/*------------ Sidebar Styling ----------- */
 .sidebar {
   position: fixed;
   top: 50px;
@@ -100,4 +114,19 @@ header h1 {
   justify-content: space-between;
   align-iems: center;
   margin-bottom: 10px;
+}
+
+/*------------ Button Styling ----------- */
+button {
+  background-color: #5d5fef; /* Match blue in screenshot */
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4a4cdb;
 }
