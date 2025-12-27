@@ -17,10 +17,7 @@
 
 	<div class="container">
 		<div class="sidebar">
-			<a link href="">Home</a>
-			<a link href="">New Contact</a>
-			<a link href="">Users</a>
-			<a link href="">Logout</a>
+			<?php include'dolph_nav.php';?>
 		</div>
 
 
