@@ -61,12 +61,7 @@
 	//Collect notes for the contact 
 	$noteStmt = $conn->prepare("SELECT * FROM notes WHERE contact_id = :contact_id"); 
 	$noteStmt->execute(['contact_id' => $contact['id']]); 
-	$notes = $noteStmt->fetch(PDO::FETCH_ASSOC);
-
-	//Collect creator of note
-	$noteUserStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
-	$noteUserStmt->execute(['id' => $notes['created_by']]); 
-	$note_creator = $noteStmt->fetch(PDO::FETCH_ASSOC);
+	$notes = $noteStmt->fetchAll(PDO::FETCH_ASSOC);
 
 	if ($contact)
 
@@ -120,7 +115,14 @@
 				<p>No notes available for this contact.</p> 
 			<?php else: ?>
 
-				<?php foreach ($notes as $note): ?>
+				<?php foreach ($notes as $note): 
+
+				//Collect creator of note
+				$noteUserStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
+				$noteUserStmt->execute(['id' => $note['created_by']]); 
+				$note_creator = $noteUserStmt->fetch(PDO::FETCH_ASSOC);
+				?>
+		
 				<div class="note_item"> 
 					<label><?= htmlspecialchars($note_creator['firstname'] . ' ' . $note_creator['lastname']) ?></label> 
 					<div><?= htmlspecialchars($note['comment']) ?></div> 
