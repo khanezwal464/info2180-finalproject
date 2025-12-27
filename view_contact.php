@@ -45,7 +45,7 @@
 	
 	
 	$stmt = $conn->prepare("SELECT firstname, lastname, email, telephone, company, assigned_to, created_by, updated_at FROM contacts WHERE email = :email"); 
-	$stmt->execute([$email]); 
+	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
 
 	if ($contact)
