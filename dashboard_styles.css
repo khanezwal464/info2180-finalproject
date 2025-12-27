@@ -92,7 +92,7 @@ main {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
-  justify-content: space-between;
+  gap: 15px;
   border-top: 1px solid #e5e7eb;
 }
 
@@ -104,6 +104,22 @@ main {
   border-radius: 10px;
   border-collapse: seperate;
   border-spacing: 0;
+}
+
+.table {
+  flex: 1;
+  padding: 15px;
+  background-color: #E0E0E0;
+  height: 800px;
+}
+
+.table th, .table td {
+  border: 1px solid #E0E0E0;
+  padding: 10px 50px;
+}
+
+.table th {
+  background-color: #E0E0E0;
 }
 
 .result {
