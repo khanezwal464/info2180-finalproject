@@ -28,7 +28,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO users (firstname, lastname, password, email, role) VALUES 
-  ('Alex', 'Robin', ('$2y$10$Xg6HrW0r4FBRoWvuKlYf3euwulrclgyancg89anAnkOVzDsd7kI2K'), 'admin@project2.com', 'Admin'),
+  ('Alex', 'Robin', '$2y$10$Xg6HrW0r4FBRoWvuKlYf3euwulrclgyancg89anAnkOVzDsd7kI2K', 'admin@project2.com', 'Admin'),
   ('Lynne', 'Taylor', SHA2('taylyn73265', 256), 'lynnetaylor@gmail.com', 'Member'),
   ('Kenzie', 'McDonald', SHA2('ruby4867!', 256), 'kenzie.mcdonald3@gmail.com', 'Member'),
   ('Ryan', 'Williams', SHA2('ryan@8365', 256), 'willryan12@gmail.com', 'Member'),
