@@ -1,6 +1,4 @@
-/* ==================================================
-   RESET & BASE
-================================================== */
+/*Base Styling */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,9 +10,7 @@ body {
   background-color: #E0E0E0;
 }
 
-/* ==================================================
-   HEADER
-================================================== */
+/*Header Styling */
 header {
   position: fixed;
   top: 0;
@@ -35,9 +31,7 @@ header h1 {
   font-size: 18px;
 }
 
-/* ==================================================
-   SIDEBAR
-================================================== */
+/* Base Styling */
 .sidebar {
   position: fixed;
   top: 50px;
@@ -47,7 +41,6 @@ header h1 {
   background-color: #ffffff;
   border-right: 1px solid #e5e7eb;
   
-  /* Increased top padding to create space between header and Home link */
   padding: 40px 20px 20px 20px; 
   
   display: flex;
@@ -59,31 +52,29 @@ header h1 {
   font-size: 14px;
   font-weight: 500;
   color: #374151;
-  margin-bottom: 18px; /* Equal distance between Home, Contact, and Users */
+  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
   transition: color 0.2s ease;
   
-  /* Text-only highlight logic */
+  /*Highlight text only */
   width: fit-content; 
   display: block;
 }
 
 .sidebar a:hover {
-  color: #4f46e5; /* Highlight color */
+  color: #4f46e5; 
 }
 
 /* THE SEPARATOR & LOGOUT SPACING */
 .sidebar a:last-child {
   margin-top: 10px;    /* Gap between 'Users' and the line */
   padding-top: 20px;   /* Gap between the line and 'Logout' text */
-  border-top: 1px solid #e5e7eb; /* The faint line */
+  border-top: 1px solid #e5e7eb; /* Faint line between 'Users' and 'Logout'
   
-  /* Ensure the line spans the padding of the sidebar */
+  /* Ensuring the line spans the padding of the sidebar */
   width: auto; 
   display: block;
 }
-/* ==================================================
-   MAIN CONTENT
-================================================== */
+/* Main Container Styling */
 .container {
   margin-left: 220px;
   padding: 100px 40px;
@@ -95,9 +86,7 @@ header h1 {
   color: #1a252f;
 }
 
-/* ==================================================
-   FORM LAYOUT (2 COLUMNS)
-================================================== */
+/*------------ Form Styling ----------- */
 form {
   background: white;
   padding: 0; /* Padding moved to footer and groups */
@@ -130,9 +119,7 @@ input, select {
   color: #555;
 }
 
-/* ==================================================
-   FOOTER & BUTTON
-================================================== */
+/*------------ Footer & Button Styling -----------*/
 .form-footer {
   grid-column: span 2; /* Spans both columns */
   background-color: #fbfbfb;
@@ -157,11 +144,9 @@ button:hover {
   background-color: #4a4cdb;
 }
 
-/* ==================================================
-   RESPONSIVE DESIGN
-================================================== */
+/* --------Implementing Responsiveness --------- */
 
-/* Tablets and Small Desktops (max-width: 1024px) */
+/* For Tablets and Small Desktops*/
 @media (max-width: 1024px) {
   .container {
     margin-left: 200px; /* Match sidebar width */
@@ -169,7 +154,7 @@ button:hover {
   }
 }
 
-/* Mobile Devices (max-width: 768px) */
+/* For Mobile Devices */
 @media (max-width: 768px) {
   /* 1. Reset Sidebar - Usually hidden or converted to a top menu on mobile */
   .sidebar {
@@ -196,7 +181,7 @@ button:hover {
     width: fit-content;
   }
 
-  /* 2. Adjust Main Content Area */
+  /*Adjusting Main Container Styling */
   .container {
     margin-left: 0;
     padding: 40px 20px;
@@ -207,12 +192,12 @@ button:hover {
     margin-top: 40px; /* Space after mobile sidebar */
   }
 
-  /* 3. Collapse Form to 1 Column */
+  /*Collapsing to form 1 column */
   form {
     grid-template-columns: 1fr;
   }
 
-  /* Ensure footer spans the single column */
+  /* Ensuring footer spans the single column */
   .form-footer {
     grid-column: span 1;
     justify-content: center; /* Easier to tap button in center on mobile */
@@ -223,14 +208,14 @@ button:hover {
   }
 }
 
-/* Very Small Phones (max-width: 480px) */
+/* For very small phones */
 @media (max-width: 480px) {
   header h1 {
     font-size: 16px;
   }
 
   button {
-    width: 100%; /* Full width button for better mobile UX */
+    width: 100%; /* Full width button for better mobile UX design */
   }
 }
 
