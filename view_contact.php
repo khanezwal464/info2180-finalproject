@@ -55,7 +55,7 @@ require 'data_base.php';
   <meta charset="utf-8">
 	<title>Contact Detail Page</title>
 
-  <link href="view_contact.css" type="text/css" rel="stylesheet"/>
+  <link href="view_contact_styles.css" type="text/css" rel="stylesheet"/>
   
 </head>
 <body>
