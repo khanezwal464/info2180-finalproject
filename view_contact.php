@@ -11,6 +11,7 @@ require 'data_base.php';
 		exit; 
 	}*/
 
+	echo "Redirected with email: " . htmlspecialchars($_GET['email']); exit;
 
 	//Switches contact's role
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
