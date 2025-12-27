@@ -176,13 +176,14 @@ header h1 {
 }
 
 .notes p {
-  padding: 5px;
+  padding-bottom: 10px;
 }
 
 input {
   background-color: white;
   height: 150px;
   width: 100%;
+  border: none;
 }
 
 /*------------ Button Styling ----------- */
