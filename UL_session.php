@@ -2,7 +2,7 @@
 
 session_start();
 
-include("connection.php"); 
+require("data_base.php"); 
 include("function.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
