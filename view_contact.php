@@ -133,8 +133,10 @@
 			<?php endif; ?>
 
 			<div class="create_note">
-				<p>Add a note for <?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']); ?></p>
-				<input type="text" name="new_note" id="new_note" placeholder="Eg: Captain America">
+				<div class="note_section">
+					<p>Add a note for <?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']); ?></p>
+					<input type="text" name="new_note" id="new_note" placeholder="Enter your text here">
+				</div>
 				<button type="submit" id="submit">Submit</button>
 			</div>
 			
