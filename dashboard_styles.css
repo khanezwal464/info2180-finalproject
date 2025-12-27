@@ -92,6 +92,8 @@ main {
   display: flex;
   flex-direction: row;
   margin-bottom: 10px;
+  justify-content: space-between;
+  border-top: 1px solid #e5e7eb;
 }
 
 .table_section {
@@ -103,3 +105,8 @@ main {
   border-collapse: seperate;
   border-spacing: 0;
 }
+
+.result {
+  margin-top: 10px;
+}
+
