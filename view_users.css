@@ -6,6 +6,10 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
+body {
+  background-color: #E0E0E0;
+}
+
 /*------------ Header Styling ----------- */
 header {
   position: fixed;
@@ -83,6 +87,7 @@ header h1 {
   display: block;
 }
 
+/*------------ Table Styling ----------- */
 .table {
   flex: 1;
   padding: 15px;
