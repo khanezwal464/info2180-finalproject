@@ -53,33 +53,19 @@
 	?>
 
   <div class="contact_page">
+	  
 		<div class="header_details">
+			<h2><?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+            <p><strong>Created By:</strong> <?= htmlspecialchars($contact['created_by']) ?></p>
+            <p><strong>Updated At:</strong> <?= htmlspecialchars($contact['updated_at']) ?></p>
+		</div>
+	  
+	  	<div class="buttons">
 			<button onclick="">Assign</button>
       		<button onclick="">Switch</button>
 		</div>
 
-	  		<?php
-	    echo '<table class="other_details">
-	          <thead>
-	          <tr>
-	          <th>Name</th>
-	          <th>Created By</th>
-	          <th>Updated At</th>
-	          </tr>
-	          </thead>
-	          <tbody>';
-	          
-	          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-				$name = $row['firstname'] . ' ' . $row['lastname'];
-	            echo '<tr>
-	                  <td>' . htmlspecialchars($name) . '</td>
-	                  <td>' . htmlspecialchars($row['created_by']) . '</td>
-	                  <td>' . htmlspecialchars($row['updated_at']) . '</td>
-	                  </tr>';
-	          }
-	            echo '</tbody></table>';
-	          ?>
-
+	  
 		<?php
 	    echo '<table class="other_details">
 	          <thead>
@@ -90,26 +76,17 @@
 	          <th>Assigned To</th>
 	          </tr>
 	          </thead>
-	          <tbody>';
-	          
-	          while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-	            echo '<tr>
-	                  <td>' . htmlspecialchars($row['email']) . '</td>
-	                  <td>' . htmlspecialchars($row['telephone']) . '</td>
-	                  <td>' . htmlspecialchars($row['company']) . '</td>
-	                  <td>' . htmlspecialchars($row['assigned_to']) . '</td>
-	                  </tr>';
-	          }
-	            echo '</tbody></table>';
+			        <tbody>
+					  <tr>
+					  <td>' . htmlspecialchars($contact['email']) . '</td>
+	                  <td>' . htmlspecialchars($contact['telephone']) . '</td>
+	                  <td>' . htmlspecialchars($contact['company']) . '</td>
+	                  <td>' . htmlspecialchars($contact['assigned_to']) . '</td>
+	                  </tr>
+					</tbody>
+					</table>';
 	          ?>  
 	</div>
-
-<?php
-	else:
-	    echo "Contact not found.";
-	endif;
-?>
-
 	</div>	
 
 </body> 
