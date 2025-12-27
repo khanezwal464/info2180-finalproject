@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <header>
         <div class="Header">
-            <img src="dph.png" alt="Dolphin Logo" id="dolphin">
+            <img src="dolphin_icon.png" alt="Dolphin Logo" id="dolphin">
             <h1>Dolphin CRM</h1>
         </div>
     </header>
@@ -73,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             </form>
         </div>
     </main>
-    <footer>
-        <p>Copyright &copy; 2025 Dolphin CRM <br>References <a href="https://www.flaticon.com/free-icons/dolphin" title="dolphin icons">Dolphin icons created by Freepik - Flaticon</a></p>
+    <footer> 
+        <p> Copyright © 2025 Dolphin CRM <br> References <a href="dolphin.png">dolphin_icon.png</a> </p> 
     </footer>
 </body>
 </html>
