@@ -105,12 +105,12 @@ header h1 {
   border-spacing: 0;
 }
 
-.table th, .table td {
+.other_details th, .other_detailse td {
   border: 1px solid #E0E0E0;
   padding: 10px 50px;
 }
 
-.table th {
+.other_details th {
   background-color: #E0E0E0;
 }
 
