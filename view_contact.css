@@ -83,7 +83,7 @@ header h1 {
 
 /*------------ Main Details Styling ----------- */
 .header_details {
-  flex: 1;
+  display: flex;
   padding: 10px;
   background-color: #E0E0E0;
   justify-content: space-between; 
