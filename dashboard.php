@@ -13,7 +13,6 @@ $user_data = check_login($conn);
 <html lang = "en">
     <head>
         <meta charset="utf-8">
-        <title>Dolphin CRM</title>
 
         <link href="dashboard_styles.css" rel = "stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,11 +21,14 @@ $user_data = check_login($conn);
 
         <script src="dashboard_script.js"></script>
         <script src="notes.js"></script>
-
-
+        
     </head>
 
     <body>   
+        
+        <header>
+            <h1>Dolphin CRM</h1>
+        </header>
 
         <main>
             <div id = "head">
