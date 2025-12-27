@@ -85,4 +85,21 @@ main {
 #head {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#filterOp {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.table_section {
+  background-color: white;
+  outline-style: solid;
+  outline-color: #DBD9D9;
+  padding: 15px;
+  border-radius: 10px;
+  border-collapse: seperate;
+  border-spacing: 0;
 }
