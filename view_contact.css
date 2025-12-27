@@ -158,17 +158,23 @@ header h1 {
 
 .notes .create_note {
   background-color: #E0E0E0;
+  margin-top: 30px;
+  padding: 15px;
+  border-radius: 10px;
+  border-collapse: seperate;
+  border-spacing: 0;
 }
 
 .notes .note_section {
   background-color: white;
-  outline-style: solid;
-  outline-color: #DBD9D9;
+  padding: 10px;
+  
 }
 
 input {
   background-color: white;
   height: 150px;
+  width: 100%;
 }
 
 /*------------ Button Styling ----------- */
