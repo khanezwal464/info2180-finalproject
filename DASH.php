@@ -26,8 +26,7 @@ $user_data = check_login($conn);
 
     </head>
 
-    <body>
-        <?php include 'header.php';?>   
+    <body>   
 
         <main>
             <div id = "head">
