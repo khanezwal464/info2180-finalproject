@@ -44,9 +44,13 @@
 	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
 	
 	
-	$stmt = $conn->prepare("SELECT firstname, lastname, email, telephone, company, assigned_to, created_by, updated_at FROM contacts WHERE email = :email"); 
+	$stmt = $conn->prepare("SELECT f* FROM contacts WHERE email = :email"); 
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	$userStmt = $conn->prepare("SELECT firstname, lastname FROM users WHERE id = :id"); 
+	$userStmt->execute(['id' => $contact['created_by']]); 
+	$creator = $userStmt->fetch(PDO::FETCH_ASSOC);
 
 	if ($contact)
 
@@ -55,16 +59,16 @@
   <div class="contact_page">
 	  
 		<div class="header_details">
-			<h2><?= htmlspecialchars($contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
-            <p><strong>Created By:</strong> <?= htmlspecialchars($contact['created_by']) ?></p>
+			<h2><?= htmlspecialchars($contact['title']. ' ' . $contact['firstname'] . ' ' . $contact['lastname']) ?></h2>
+            <p><strong>Created On:</strong> <?= htmlspecialchars($contact['created_at']) ?> <strong>by:</strong> <?= htmlspecialchars($creator['firstname'] . ' ' . $creator['lastname']); ?> </p>
             <p><strong>Updated At:</strong> <?= htmlspecialchars($contact['updated_at']) ?></p>
+		
+		  	<div class="buttons">
+				<button onclick="">Assign</button>
+	      		<button onclick="">Switch</button>
+			</div>
+			
 		</div>
-	  
-	  	<div class="buttons">
-			<button onclick="">Assign</button>
-      		<button onclick="">Switch</button>
-		</div>
-
 	  
 		<?php
 	    echo '<table class="other_details">
