@@ -106,6 +106,7 @@ require 'data_base.php';
 			
 		  	<div class="buttons">
 				<form method="POST">
+					<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>">
 					<button id="assign" name="action" value="assign">Assign to me</button>
 		      		<button id="switch" name="action" value="switch">Switch to <?= htmlspecialchars($oppositeRole) ?> </button>
 				</form>
