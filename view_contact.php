@@ -11,11 +11,16 @@ require 'data_base.php';
 		exit; 
 	}*/
 
-//Collecting contact details
+
+	$email = $_GET['email'];
+	
+	//Sanitisation of user input
+	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
+
+	//Collecting contact details
 	$stmt = $conn->prepare("SELECT * FROM contacts WHERE email = :email"); 
 	$stmt->execute(['email' => $email]); 
 	$contact = $stmt->fetch(PDO::FETCH_ASSOC);
-
 
 	//Switches contact's role
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
@@ -69,10 +74,7 @@ require 'data_base.php';
 
 <?php
 
-	$email = $_GET['email'];
-	
-	//Sanitisation of user input
-	$email = filter_var($_GET['email'], FILTER_SANITIZE_EMAIL);
+
 	
 	
 	//To display opposite role on switch button
