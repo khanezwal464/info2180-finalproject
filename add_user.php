@@ -26,10 +26,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <header>
+    <img src="images/dolphin_icon.png" alt="Dolphin CRM Logo" class="header-logo">
     <h1>Dolphin CRM</h1>
 </header>
-   
+
+<nav class="sidebar">
     <?php include 'dolph_nav.php';?>
+</nav>
 
     <div class="container">
     <h2>New User</h2>
