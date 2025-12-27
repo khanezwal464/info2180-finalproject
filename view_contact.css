@@ -32,7 +32,7 @@ header h1 {
 }
 
 /*------------ Main Container Styling ----------- */
-.contact {
+.contact_page {
   margin-left: 220px;
   padding: 100px 40px;
 }
@@ -82,14 +82,14 @@ header h1 {
 }
 
 /*------------ Table Styling ----------- */
-.contact {
+.header_details {
   flex: 1;
   padding: 15px;
   background-color: #E0E0E0;
   height: 800px;
 }
 
-.details {
+.other_details {
   background-color: white;
   outline-style: solid;
   outline-color: #DBD9D9;
