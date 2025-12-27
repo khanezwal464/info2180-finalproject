@@ -8,26 +8,30 @@ include("function.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $email = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
-    $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    $i_hash = hash('sha256', $password);
+    $password = $_POST["password"];
+    //$password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
+    //$hash = password_hash($password, PASSWORD_DEFAULT);
+    //$i_hash = hash('sha256', $password);
 
     if (!empty($email) && !empty($password)) {
         $stmt = $conn -> prepare("SELECT * FROM Users WHERE email =? LIMIT 1 ");
         $stmt->execute([$email]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($result && mysqli_num_rows($result) == 1) {
-            $user_data = mysqli_fetch_assoc($result);
+        if ($result) {
+            $user_data = $result;
                 
-            if ($user_data['password'] === $i_hash || password_verify($password, $hash)) {
+          //if ($user_data['password'] === $i_hash || password_verify($password, $hash)) {
+            if (password_verify($password, $user_data['password'])) {
                 $_SESSION['email'] = $user_data['email'];
-                $_SESSION['username'] = $user_data['firstname'] . $user_data['lastname'];
+                //$_SESSION['username'] = $user_data['firstname'] . $user_data['lastname'];
+                $_SESSION['username'] = $user_data['firstname'] . ' ' . $user_data['lastname'];
                 $_SESSION['id'] = $user_data['id'];
                 $_SESSION['role'] = $user_data['role'];
                 
                 header("Location: dashboard.php");
-                die;
+                exit;
+                
             } else {
                 echo "<script>alert('Incorrect username or password');</script>";
             }
