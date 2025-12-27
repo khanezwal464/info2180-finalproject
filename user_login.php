@@ -10,9 +10,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $email = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
     $password = $_POST["password"];
-    //$password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
-    //$hash = password_hash($password, PASSWORD_DEFAULT);
-    //$i_hash = hash('sha256', $password);
 
     if (!empty($email) && !empty($password)) {
         $stmt = $conn -> prepare("SELECT * FROM users WHERE email =? LIMIT 1 ");
@@ -22,10 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result) {
             $user_data = $result;
                 
-          //if ($user_data['password'] === $i_hash || password_verify($password, $hash)) {
             if (password_verify($password, $user_data['password'])) {
                 $_SESSION['email'] = $user_data['email'];
-                //$_SESSION['username'] = $user_data['firstname'] . $user_data['lastname'];
                 $_SESSION['username'] = $user_data['firstname'] . ' ' . $user_data['lastname'];
                 $_SESSION['id'] = $user_data['id'];
                 $_SESSION['role'] = $user_data['role'];
