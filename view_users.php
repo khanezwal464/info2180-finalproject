@@ -28,6 +28,8 @@
 			<button onclick="window.location.href='add_user.php'">Add User</button>
 		</div>
 
+		<?php $stmt = $conn->query("SELECT firstname, lastname, email, role, date_time FROM users"); ?>
+
 		<?php
 	    echo '<table class="users">
 	          <thead>
