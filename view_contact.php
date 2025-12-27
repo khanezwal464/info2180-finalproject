@@ -58,8 +58,8 @@ require 'data_base.php';
 
 			$newRole = ($currentRole === 'sales lead') ? 'support' : 'sales lead';
 
-			$stmt = $conn->prepare(" UPDATE contacts SET type = :role WHERE id = :contact_id "); 
-			$stmt->execute([ 'type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
+			$stmt = $conn->prepare(" UPDATE contacts SET type = :type WHERE id = :contact_id "); 
+			$stmt->execute(['type' => $newRole, 'contact_id' => $_POST['contact_id'] ]);
 
 			//Allows updated info to be reflected upon refresh
 			header("Location: contact.php?id=" . $_POST['contact_id']); 
