@@ -45,7 +45,7 @@
 	<div class="table">
 		<div class="t_header">
 			<h2>Users</h2>
-			<button id="adduser">Add User</button>
+			<button onclick="window.location.href='add_user.php'">Add User</button>
 		</div>
 
 		<?php
