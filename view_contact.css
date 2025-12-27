@@ -96,6 +96,9 @@ header h1 {
 }
 
 .other_details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
   background-color: white;
   outline-style: solid;
   outline-color: #DBD9D9;
@@ -105,14 +108,21 @@ header h1 {
   border-spacing: 0;
 }
 
-.other_details th, .other_detailse td {
-  border: 1px solid #E0E0E0;
-  padding: 10px 50px;
-}
+.detail_item { 
+  display: flex; 
+  flex-direction: column;  
+} 
 
-.other_details th {
-  background-color: #E0E0E0;
-}
+.detail_item label { 
+  font-weight: bold; 
+  margin-bottom: 5px; color: #555; 
+} 
+
+.detail_item div { 
+  padding: 10px; 
+  border: 1px solid #E0E0E0; 
+  border-radius: 5px; 
+  background: #fafafa; }
 
 .top_row { 
   display: flex; 
