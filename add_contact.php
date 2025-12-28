@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>New Contact</title>
-    <link rel="stylesheet" href="create_con.css">
+    <link rel="stylesheet" href="add_contact_styles.css">
 </head>
 <body>
 
