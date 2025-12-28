@@ -1,28 +1,42 @@
-.varela-round-regular {
-    font-family: "Varela Round", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-
-header{
-    background-color: #202c34;
-    color: aliceblue;
-    font-size: 10px;
-    font-family:"Varela Round", sans-serif;
-    padding: 10px;
+/*------------ Base Styling ----------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-img{
-    width: auto;
-    height: 20px;
+body {
+  background-color: #E0E0E0;
 }
 
-.Header h1, img {
-    display: inline;
-    vertical-align: middle;
-    padding: 10px;
+/*------------ Header Styling ----------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1a252f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  z-index: 1000;
+  gap: 15px;
 }
+
+header .dolp_icon { 
+  width: 30px;
+  height: 30px; 
+}
+
+header h1 {
+  font-size: 16px; 
+  font-weight: 400;       
+  letter-spacing: 0.5px;
+  font-size: 18px;
+}
+
 
 #form {
     display: flex;
