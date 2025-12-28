@@ -20,8 +20,14 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  padding-left: 50px;
+  padding-left: 15px;
   z-index: 1000;
+  gap: 15px;
+}
+
+header .dolp_icon { 
+  width: 30px;
+  height: 30px; 
 }
 
 header h1 {
@@ -59,6 +65,13 @@ header h1 {
   flex-direction: column;
 }
 
+.sidebar .nav_item {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
+}
+
 .sidebar a {
   text-decoration: none;
   font-size: 14px;
@@ -71,21 +84,28 @@ header h1 {
   width: fit-content; 
   display: block;
 }
-
 .sidebar a:hover {
   color: #4f46e5; 
 }
 
+.nav-icon { 
+  width: 20px; 
+  height: 20px; 
+}
+
 /* THE SEPARATOR & LOGOUT SPACING */
-.sidebar a:last-child {
+.sidebar .nav_item:last-child {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;    /* Gap between 'Users' and the line */
   padding-top: 20px;   /* Gap between the line and 'Logout' text */
   border-top: 1px solid #e5e7eb; /* Faint line between 'Users' and 'Logout'
   
   /* Ensuring the line spans the padding of the sidebar */
   width: auto; 
-  display: block;
 }
+
 
 /*------------ Table Styling ----------- */
 .table {
