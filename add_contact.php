@@ -100,12 +100,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>New Contact</title>
-    <link rel="stylesheet" href="create_con.css">
+    <link rel="stylesheet" href="add_contact_styles.css">
 </head>
 <body>
 
 <header>
-    <img src="images/dolphin_icon.png" alt="Dolphin CRM Logo" class="header_logo">
+    <img src="dolphin_icon.png" alt="Dolphin CRM Logo" class="header_logo">
     <h1>Dolphin CRM</h1>
 </header>
 
