@@ -47,9 +47,9 @@ $user_data = check_login($conn);
                     <p id= "Sales" class = "filter">Sales Leads</p>
                     <p id = "Support" class = "filter">Support</p>
                     <p id = "Assigned" class = "filter">Assigned to me</p>
-                
-                    <div id="result"></div>
                 </div>
+                    <div id="result"></div>
+            </div>
         </main>
 
         <?php include 'dolph_nav.php';?>
