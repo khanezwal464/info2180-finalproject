@@ -13,7 +13,7 @@
 
 <div class="sidebar-divider"></div>
 
- <a href="">        
+ <a href="user_logout.php">
     <img src="images/logout_icon.png" alt="Logout"> Logout  
 </a>
 
