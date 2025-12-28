@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         password_hash($_POST['password'], PASSWORD_DEFAULT),
         $_POST['role']
     ]);
+
+    $message = "<p class='msg-success'>User successfully created.</p>";
 }
 
 ?>
