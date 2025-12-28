@@ -117,7 +117,9 @@ main {
   z-index: 5;
 }
 
-#result { padding: 15px; }
+#result { 
+  padding: 15px; 
+}
 
 .table_section {
   background-color: white;
@@ -128,8 +130,9 @@ main {
 
 .table {
   background-color: white;
+  border: 1px solid #DBD9D9;
   border-radius: 10px;
-  border-collapse: seperate;
+  border-collapse: collapse;
   border-spacing: 0;
 }
 
