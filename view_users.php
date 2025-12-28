@@ -3,7 +3,7 @@ session_start(); ?>
 
 <?php 
 	if (!empty($_SESSION['error'])) { 
-		echo "<p class='msg-error'>" . $_SESSION['error'] . "</p>"; 
+		echo "<div class='msg_container'><p class='msg-error'>" . $_SESSION['error'] . "</p></div>";
 		unset($_SESSION['error']); 
 	} 
 ?>
