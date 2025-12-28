@@ -1,117 +1,80 @@
+
+/*------------ Base Styling ----------- */
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Varela Round', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body {
-    background-color: #E0E0E0; /* Matches your dashboard background */
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  background-color: #E0E0E0;
 }
 
+/*------------ Header Styling ----------- */
 header {
-    background-color: #1a252f;
-    color: white;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    padding-left: 25px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #1a252f;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  z-index: 1000;
+  gap: 15px;
 }
 
-.header_logo {
-    height: 24px;
-    margin-right: 12px;
+header .dolp_icon { 
+  width: 30px;
+  height: 30px; 
 }
 
 header h1 {
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 16px; 
+  font-weight: 400;       
+  letter-spacing: 0.5px;
+  font-size: 18px;
 }
 
-main {
-    flex: 1;
+
+#form {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding-top: 60px;
+    margin: auto;
+    font-family:"Varela Round", sans-serif;
+
+}
+input{
+    padding: 15px;
+    border-radius: 10px;
 }
 
-.login-card {
-    background: #ffffff;
-    width: 400px; /* Fixed width for the card */
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-
-.login-header {
+.input{
     padding: 20px;
-    text-align: center;
-    border-bottom: 1px solid #eeeeee;
 }
 
-.login-header h2 {
-    font-size: 22px;
-    color: #333;
-    font-weight: 400;
-}
-
-.login-form {
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center aligns the wrappers */
-}
-
-.input-wrapper {
-    width: 100%; /* Spans the full width of the form padding */
-    margin-bottom: 15px;
-}
-
-.input-wrapper input {
-    width: 100%; /* Ensures email/pass boxes are identical width */
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f9f9f9;
-}
-
-/* THE PURPLE BUTTON - High Specificity */
-button.login-btn {
-    width: 100% !important; /* Forces same width as input-wrapper */
-    background-color: #4f46e5 !important; /* Explicit Indigo/Purple */
-    color: #ffffff !important;
-    padding: 12px;
+#button{
+    background-color: blueviolet;
+    color: aliceblue;
     border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: 600;
     cursor: pointer;
-    display: flex;
+    font-size: 1.5em;
+    padding: 10px;
+    width:100%;
+}
+
+
+main{
     align-items: center;
+    min-height: 50vh;
+    padding-top: 150px;
+
+
+}
+
+footer{
+    display: flex;
     justify-content: center;
-}
-
-button.login-btn:hover {
-    background-color: #3730a3 !important;
-}
-
-.lock-icon {
-    height: 16px;
-    margin-right: 10px;
-    filter: brightness(0) invert(1); /* Makes the icon white */
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 12px;
-    color: #666;
 }
