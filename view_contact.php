@@ -7,9 +7,9 @@ session_start();
 		$stmt = $conn->prepare(" INSERT INTO notes (contact_id, created_by, comment, created_at) VALUES (:contact_id, :created_by, :comment, NOW()) "); 
 		$stmt->execute([ 'contact_id' => $_POST['contact_id'], 'created_by' => $_SESSION['id'], 'comment' => $_POST['new_note'] ]); 
 		
-		// Redirect to avoid resubmitting on refresh 
-		header("Location: contact.php?id=" . $_POST['contact_id']); 
-		exit; 
+		//Allows updated info to be reflected upon refresh
+		header("Location: view_contact.php?email=". urlencode($_POST['email']));
+		exit;
 	}
 
 	//Switches contact's role
@@ -165,6 +165,7 @@ session_start();
 					<form method="POST">
 						<textarea type="text" name="new_note" id="new_note" placeholder="Enter your text here"></textarea>
 						<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>"> <!-- Ensures note is added to correct contact -->
+						<input type="hidden" name="email" value="<?= $contact['email'] ?>"
 						<button type="submit" id="submit">Submit</button>
 					</form>
 				</div>
