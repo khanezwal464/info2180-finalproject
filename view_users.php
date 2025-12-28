@@ -1,4 +1,12 @@
-<?php require("data_base.php"); ?>
+<?php require("data_base.php"); 
+session_start(); ?>
+
+<?php 
+	if (!empty($_SESSION['error'])) { 
+		echo "<p class='msg-error'>" . $_SESSION['error'] . "</p>"; 
+		unset($_SESSION['error']); 
+	} 
+?>
 
 <!DOCTYPE html>
 <html>
