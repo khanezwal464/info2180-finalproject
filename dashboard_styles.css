@@ -117,6 +117,8 @@ main {
   z-index: 5;
 }
 
+#result { padding: 15px; }
+
 .table_section {
   background-color: white;
   outline-style: solid;
@@ -134,7 +136,7 @@ main {
 .table th, .table td {
   border-top: 1px solid #E0E0E0;
   border-bottom: 1px solid #E0E0E0;
-  padding: 10px 30px;
+  padding: 10px 40px;
 }
 
 .table th {
