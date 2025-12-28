@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
             table.innerHTML = data;
 
-            types = document.querySelectorAll(".type");
+            let types = document.querySelectorAll(".type");
 
             types.forEach(type => {
                        
                 if(type.textContent.toUpperCase() == "SALES LEAD"){
                     type.innerHTML = "SALES LEAD";
-                    type.style.backgroundColor = "yellow";
+                    type.style.backgroundColor = "#DEE368";
                     type.style.padding = "7px";
                     type.style.borderRadius = "5px";
                     type.style.fontWeight = "bold";
@@ -27,10 +27,10 @@ document.addEventListener('DOMContentLoaded', (e)=>{
 
                 else if(type.textContent.toUpperCase()=="SUPPORT"){
                     type.innerHTML = "SUPPORT";
-                    type.style.backgroundColor = "blue";
+                    type.style.backgroundColor = "#A98EE8";
                     type.style.padding = "7px";
                     type.style.borderRadius = "5px";
-                    type.style.color = "white";
+                    type.style.color = "black";
                     type.style.fontWeight = "bold";
                 }
             });
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
     }
 
     function newContact(){
-        window.location.href = "/*Placeholder*/.php";
+        window.location.href = "add_contact.php";
     }
 
 
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
             assigned.style.color = 'black';
             assigned.style.textDecoration ='none';
         }
-        else if(click == "Sale"){
+        else if(click == "Sales"){
             gen.style.color = 'black';
             gen.style.textDecoration ='none';
             support.style.color = 'black';
@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', (e)=>{
         filterTable('Sales');
         sale.style.color = 'skyblue';
         sale.style.textDecoration ='underline';
-        resetStyle("Sale");
+        resetStyle("Sales");
     });
 
     support.addEventListener("click", e=>{
