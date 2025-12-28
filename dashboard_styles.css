@@ -41,6 +41,7 @@ header h1 {
 main {
   margin-left: 220px;
   padding: 100px 40px;
+  z-index: 1;
 }
 
 /*------------ Sidebar Styling ----------- */
@@ -113,6 +114,7 @@ main {
   margin-bottom: 10px;
   gap: 15px;
   border-bottom: 1px solid #e5e7eb;
+  z-index: 5;
 }
 
 .table_section {
