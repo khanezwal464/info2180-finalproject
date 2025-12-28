@@ -165,8 +165,11 @@ header h1 {
   border-bottom: 1px solid #e5e7eb;
 } 
 
+.note_item { 
+  margin-bottom: 10px; color: #555;
+}
+
 .note_item div { 
-  margin-bottom: 5px; color: #555;
   font-size: 15px
 }
 
