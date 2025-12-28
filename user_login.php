@@ -51,10 +51,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </head>
 <body>
     <header>
-        <div class="Header">
-            <img src="dolphin_icon.png" alt="Dolphin Logo" id="dolphin">
-            <h1>Dolphin CRM</h1>
-        </div>
+        <img src="dolphin_icon.png" alt="Dolphin Logo" class="dolp_icon">
+        <h1>Dolphin CRM</h1>
     </header>
     <main>
         <div id="form">
