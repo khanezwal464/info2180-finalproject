@@ -1,9 +1,9 @@
 
- <a href="">
+ <a href="dashboard.php">
     <img src="images/home_icon.png" alt="Home"> Home
 </a>
 
-<a href="">
+<a href="create_contact.php">
     <img src="images/contact_icon.png" alt="Contact"> New Contact
 </a>
 

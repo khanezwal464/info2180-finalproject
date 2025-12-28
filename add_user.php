@@ -1,7 +1,9 @@
 <?php
-//require_once 'includes/auth.php';
+
+session_start();
 require_once 'data_base.php';
-//admin_req();
+
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare(

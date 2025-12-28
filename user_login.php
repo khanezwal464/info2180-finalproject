@@ -1,48 +1,56 @@
 <?php
-
 session_start();
 
-require 'data_base.php'; 
+require_once 'data_base.php';
 include 'function.php';
-
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
-    $email = filter_var($_POST["email"], FILTER_SANITIZE_STRING);
+    // 2. Sanitize input
+    $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
     $password = $_POST["password"];
 
     if (!empty($email) && !empty($password)) {
-        $stmt = $conn -> prepare("SELECT * FROM users WHERE email =? LIMIT 1 ");
+        
+        // 3. Database Query using $conn from data_base.php
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? LIMIT 1");
         $stmt->execute([$email]);
-        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $user_data = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($result) {
-            $user_data = $result;
+        if ($user_data) {
+            
+            // 4. SHA256 Hashing to match your SQL: SHA2('password', 256)
+         // $hashed_input = hash('sha256', $password);
+            $hashed_input = substr(hash('sha256', $password), 0, 40);
+            
+
+            
+            if ($hashed_input === $user_data['password']) {
                 
-            if (password_verify($password, $user_data['password'])) {
+                // 5. Set Session variables consistently
+                $_SESSION['user_id'] = $user_data['id']; 
                 $_SESSION['email'] = $user_data['email'];
                 $_SESSION['username'] = $user_data['firstname'] . ' ' . $user_data['lastname'];
-                $_SESSION['id'] = $user_data['id'];
                 $_SESSION['role'] = $user_data['role'];
                 
                 header("Location: dashboard.php");
                 exit;
                 
             } else {
-                echo "<script>alert('Incorrect username or password');</script>";
+                $error = "Incorrect email or password";
             }
         } else {
-            echo "<script>alert('Incorrect username or password');</script>";
+            $error = "Incorrect email or password";
         }
     } else {
-        echo "<script>alert('Please enter a valid email and password');</script>";
+        $error = "Please enter both email and password";
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="user_login_styles.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,25 +64,31 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <h1>Dolphin CRM</h1>
         </div>
     </header>
+    
     <main>
         <div id="form">
             <form method="post">
                 <h1>User Login</h1>
+                
                 <div class="input">
-                    <input type="text" name="email" placeholder="Email"> 
+                    <input type="email" name="email" placeholder="Email" required> 
                 </div>
                 <div class="input">
-                    <input type="password" name="password" placeholder="Password"> 
+                    <input type="password" name="password" placeholder="Password" required> 
                 </div>
                 <div class="input">
                     <input type="submit" value="Login" id="button" name="submit">
-                    
                 </div>
             </form>
         </div>
     </main>
+
+    <?php if(isset($error)): ?>
+        <script>alert('<?php echo $error; ?>');</script>
+    <?php endif; ?>
+
     <footer> 
-        <p> Copyright © 2025 Dolphin CRM <br> References <a href="dolphin.png">dolphin_icon.png</a> </p> 
+        <p>Copyright © 2025 Dolphin CRM</p> 
     </footer>
 </body>
 </html>
