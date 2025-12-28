@@ -4,20 +4,9 @@ session_start();
 require "data_base.php";
 include "function.php";
 
-/*if(isset($_GET['filter'])){
-    $query = strip_tags($_GET['filter']);
-}
-
-else{
-    $query = '';
-}*/
-
 $query = isset($_GET['filter']) ? strip_tags($_GET['filter']) : '';
 
 if($query == ''){
-    /*$filt = "SELECT * from contacts";
-    $result = mysqli_query($conn, $filt);
-    $results = mysqli_fetch_all($result, MYSQLI_ASSOC);*/
     
     $stmt = $conn->query("SELECT * FROM contacts"); 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -49,13 +38,6 @@ if($query == ''){
 
 <?php 
 } elseif($query == 'Sales'|| $query == 'Support'){ 
-    /*$filt = "SELECT * from contacts WHERE type LIKE ?";
-    $query = "%".strip_tags($_GET['filter'])."%";
-    $statement = $conn->prepare($filt);
-    $statement ->bind_param("s",$query);
-    $statement ->execute();
-    $result = $statement ->get_result();
-    $results = $result ->fetch_all(MYSQLI_ASSOC);?>*/
 
     $filter = "%".strip_tags($_GET['filter'])."%"; 
     $stmt = $conn->prepare("SELECT * FROM contacts WHERE type LIKE ?"); 
@@ -88,15 +70,7 @@ if($query == ''){
         
 <?php
 } elseif($query == 'Assigned'){
-    /*$sess = strip_tags($_SESSION['id']);
-    $filt = "SELECT * from contacts WHERE contacts.assigned_to = ?";
-
-    $statement = $conn->prepare($filt);
-    $statement ->bind_param("s",$sess);
-    $statement ->execute();
-    $result = $statement ->get_result();
-    $results = $result ->fetch_all(MYSQLI_ASSOC);?>*/
-
+    
     $sess = $_SESSION['id']; 
     $stmt = $conn->prepare("SELECT * FROM contacts WHERE assigned_to = ?"); 
     $stmt->execute([$sess]); 
