@@ -5,7 +5,7 @@ session_start();
 	//Saves new note to database 
 	if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['new_note'])) { 
 		$stmt = $conn->prepare(" INSERT INTO notes (contact_id, created_by, comment, created_at) VALUES (:contact_id, :created_by, :comment, NOW()) "); 
-		$stmt->execute([ 'contact_id' => $_POST['contact_id'], 'created_by' => $_SESSION['user_id'], 'comment' => $_POST['new_note'] ]); 
+		$stmt->execute([ 'contact_id' => $_POST['contact_id'], 'created_by' => $_SESSION['id'], 'comment' => $_POST['new_note'] ]); 
 		
 		// Redirect to avoid resubmitting on refresh 
 		header("Location: contact.php?id=" . $_POST['contact_id']); 
