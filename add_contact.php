@@ -1,23 +1,14 @@
 <?php
 session_start();
 require_once 'data_base.php';
+require_once 'function.php';
 
-/* ================================
-   1. AUTHENTICATION CHECK
-================================ */
-/*
-if (!isset($_SESSION['user_id'])) {
-    header("Location: user_login.php");
-    exit;
-}
-    /*
+$user = check_login($conn);
 
 
 $message = "";
 
-/* ================================
-   2. FETCH USERS FOR DROPDOWN
-================================ */
+
 try {
     $stmt = $conn->query("SELECT id, firstname, lastname FROM users");
     $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -26,9 +17,7 @@ try {
     $message = "<p class='msg-error'>Unable to load users.</p>";
 }
 
-/* ================================
-   3. HANDLE FORM SUBMISSION
-================================ */
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     /* ---- Server-side validation ---- */
@@ -56,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message = "<p class='msg-error'>Invalid email address.</p>";
         } else {
 
-            /* ---- Validate assigned user exists ---- */
+            /* ---- Validating if assigned user exists ---- */
             $check = $conn->prepare("SELECT id FROM users WHERE id = ?");
             $check->execute([$assigned_to]);
 
@@ -64,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $message = "<p class='msg-error'>Invalid user selected.</p>";
             } else {
 
-                /* ---- Insert contact ---- */
+                /* ---- Inserting contact ---- */
                 try {
                     $sql = "INSERT INTO contacts 
                             (title, firstname, lastname, email, telephone, company, type, assigned_to, created_by, created_at, updated_at)
@@ -100,12 +89,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>New Contact</title>
-    <link rel="stylesheet" href="add_contact_styles.css">
+    <link rel="stylesheet" href="create_con.css">
 </head>
 <body>
 
 <header>
-    <img src="dolphin_icon.png" alt="Dolphin CRM Logo" class="header_logo">
+    <img src="dolphin_icon.png" alt="Dolphin" class="dolp_icon">
     <h1>Dolphin CRM</h1>
 </header>
 
