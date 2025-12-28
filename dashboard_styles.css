@@ -109,13 +109,13 @@ main {
 .table {
   flex: 1;
   padding: 15px;
-  background-color: #E0E0E0;
+  background-color: white;
   height: 800px;
 }
 
 .table th, .table td {
   border: 1px solid #E0E0E0;
-  padding: 10px 50px;
+  padding: 10px 30px;
 }
 
 .table th {
