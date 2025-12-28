@@ -165,7 +165,7 @@ session_start();
 					<form method="POST">
 						<textarea type="text" name="new_note" id="new_note" placeholder="Enter your text here"></textarea>
 						<input type="hidden" name="contact_id" value="<?= $contact['id'] ?>"> <!-- Ensures note is added to correct contact -->
-						<input type="hidden" name="email" value="<?= $contact['email'] ?>"
+						<input type="hidden" name="email" value="<?= $contact['email'] ?>">
 						<button type="submit" id="submit">Submit</button>
 					</form>
 				</div>
