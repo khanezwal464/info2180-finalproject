@@ -5,7 +5,7 @@ require_once 'data_base.php';
 $message = "";
 
 /* Admin Only Access */
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'Admin') {
+if (!isset($_SESSION['id']) || $_SESSION['role'] !== 'Admin') {
     die("<p style='color:red;'>Access denied. Admins only.</p>");
 }
 
