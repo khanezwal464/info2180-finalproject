@@ -27,8 +27,10 @@ $user_data = check_login($conn);
     <body>   
         
         <header>
-            <h1>Dolphin CRM</h1>
+        	<img src="dolphin_icon.png" alt="Dolphin" class="dolp_icon">
+        	<h1>Dolphin CRM</h1>
         </header>
+
 
         <main>
             <div id = "head">
