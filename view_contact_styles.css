@@ -24,6 +24,11 @@ header {
   z-index: 1000;
 }
 
+header .dolp_icon { 
+  width: 30px;
+  height: 30px; 
+}
+
 header h1 {
   font-size: 16px; 
   font-weight: 400;       
