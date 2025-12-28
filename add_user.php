@@ -4,12 +4,17 @@
 session_start();
 require_once 'data_base.php';
 
-
+if ($_SESSION['role'] !== 'Admin') { 
+    $_SESSION['error'] = "You do not have permission to add users."; 
+    header("Location: users.php"); 
+    exit; 
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt = $conn->prepare(
         "INSERT INTO users (firstname, lastname, email, password, role) VALUES (?,?,?,?,?)"
     );
+    
     $stmt->execute([
         $_POST['firstname'],
         $_POST['lastname'],
