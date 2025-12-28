@@ -44,7 +44,7 @@ if($query == ''){
     $stmt->execute([$filter]); 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-    <table>
+    <table class = "table">
         <tr>
             <th>Name</th>
             <th>Email</th>
@@ -76,7 +76,7 @@ if($query == ''){
     $stmt->execute([$sess]); 
     $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-    <table>
+    <table class = "table">
         <tr>
             <th>Name</th>
             <th>Email</th>
