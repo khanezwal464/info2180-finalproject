@@ -63,7 +63,7 @@ header h1 {
   display: flex; 
   align-items: center;
   gap: 10px;
-    margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
+  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
 }
 
 .sidebar a{
