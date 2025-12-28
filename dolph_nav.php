@@ -16,7 +16,7 @@
 
     <div class="nav_item">
         <img src="logout_icon.png" alt="Logout" class="nav-icon">
-        <a href="user_login.php">Logout</a>
+        <a href="user_logout.php">Logout</a>
     </div>
     
 </nav>
