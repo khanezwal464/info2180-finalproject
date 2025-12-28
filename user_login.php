@@ -51,44 +51,55 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="user_login_styles.css" rel="stylesheet">
+    <title>Dolphin CRM - Login</title>
+    <link rel="stylesheet" type="text/css" href="user_login_styles.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-    <title>Dolphin Login</title>
 </head>
 <body>
-    <header>
-        <div class="Header">
-            <img src="dolphin_icon.png" alt="Dolphin Logo" id="dolphin">
-            <h1>Dolphin CRM</h1>
-        </div>
-    </header>
-    
-    <main>
-        <div id="form">
-            <form method="post">
-                <h1>User Login</h1>
-                
-                <div class="input">
-                    <input type="email" name="email" placeholder="Email" required> 
-                </div>
-                <div class="input">
-                    <input type="password" name="password" placeholder="Password" required> 
-                </div>
-                <div class="input">
-                    <input type="submit" value="Login" id="button" name="submit">
-                </div>
-            </form>
-        </div>
-    </main>
 
-    <?php if(isset($error)): ?>
-        <script>alert('<?php echo $error; ?>');</script>
-    <?php endif; ?>
+<header>
+    <img src="images/dolphin_icon.png" alt="Dolphin Logo" class="header_logo">
+    <h1>Dolphin CRM</h1>
+</header>
 
-    <footer> 
-        <p>Copyright © 2025 Dolphin CRM</p> 
-    </footer>
+<main>
+    <div class="login-card">
+
+        <div class="login-header">
+            <h2>Login</h2>
+        </div>
+
+        <form method="post" class="login-form">
+
+            <div class="input-wrapper">
+                <input type="email" name="email" placeholder="Email address" required>
+            </div>
+
+            <div class="input-wrapper">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="login-btn">
+                <img src="images/lock_icon.png" alt="" class="lock-icon">
+                Login
+            </button>
+
+        </form>
+
+    </div>
+</main>
+
+<footer>
+    <p>Copyright © 2025 Dolphin CRM</p>
+</footer>
+
+<?php if (isset($error)): ?>
+<script>alert('<?php echo $error; ?>');</script>
+<?php endif; ?>
+
 </body>
+
 </html>
