@@ -59,6 +59,7 @@ require 'data_base.php';
 
   <header>
     <h1>Dolphin CRM</h1>
+	<img src="dolphin_icon.png" alt="Dolphin" class="dolp_icon">
   </header>
 
 	<div class="container">
