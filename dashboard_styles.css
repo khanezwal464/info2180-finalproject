@@ -125,16 +125,15 @@ main {
 }
 
 .table {
-  padding: 15px;
   background-color: white;
-  height: 800px;
   border-radius: 10px;
   border-collapse: seperate;
   border-spacing: 0;
 }
 
 .table th, .table td {
-  border: 1px solid #E0E0E0;
+  border-top: 1px solid #E0E0E0;
+  border-bottom: 1px solid #E0E0E0;
   padding: 10px 30px;
 }
 
