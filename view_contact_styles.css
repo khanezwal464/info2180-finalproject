@@ -76,8 +76,16 @@ header h1 {
   color: #4f46e5; 
 }
 
+.nav-icon { 
+  width: 7px; 
+  height: 7px; 
+}
+
 /* THE SEPARATOR & LOGOUT SPACING */
 .sidebar .nav_item:last-child {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;    /* Gap between 'Users' and the line */
   padding-top: 20px;   /* Gap between the line and 'Logout' text */
   border-top: 1px solid #e5e7eb; /* Faint line between 'Users' and 'Logout'
