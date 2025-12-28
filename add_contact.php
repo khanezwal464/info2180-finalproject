@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $company     = $_POST['company'] ?? null;
         $type        = $_POST['type'];
         $assigned_to = (int) $_POST['assigned_to'];
-        $created_by  = $_SESSION['user_id'];
+        $created_by  = $_SESSION['id'];
 
         if (!$email) {
             $message = "<p class='msg-error'>Invalid email address.</p>";
