@@ -20,28 +20,21 @@ header {
   color: white;
   display: flex;
   align-items: center;
-  padding-left: 25px;
+  padding-left: 15px;
   z-index: 1000;
+  gap: 15px;
 }
 
-/*Logo Styling  */
-.header_logo {
-    height: 24px;
-    width: auto;
-    display: block;
-    /*Add spacing logo and header text */
-    margin-right: 12px;
+header .dolp_icon { 
+  width: 30px;
+  height: 30px; 
 }
 
 header h1 {
-  font-size: 18px;
+  font-size: 16px; 
   font-weight: 400;       
   letter-spacing: 0.5px;
-  
-  /*Margin reset to handle spacing between logo and text*/
-  margin: 0;
-  display: flex;
-  align-items: center;
+  font-size: 18px;
 }
 
 /* Base Styling */
@@ -60,45 +53,46 @@ header h1 {
   flex-direction: column;
 }
 
+.sidebar .nav_item {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
+}
+
 .sidebar a {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   color: #374151;
-  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
   transition: color 0.2s ease;
   
-  display:flex;
   /*Highlight text only */
   width: fit-content; 
-  display: flex; /*Aligning icons and text*/
-  align-items: center; 
-
-  /*Creating space from the left edge for the icon */
-  padding-left: 10px;
+  display: block;
 }
-
-/*Icons within sidebar*/
-.sidebar a img {
-    height: 20px; /*Matching text height*/
-    width: auto;
-    margin-right: 15px; /*Spacing between icon and text*/
-}
-
 .sidebar a:hover {
   color: #4f46e5; 
 }
 
+.nav-icon { 
+  width: 20px; 
+  height: 20px; 
+}
+
 /* THE SEPARATOR & LOGOUT SPACING */
-.sidebar-divider {
+.sidebar .nav_item:last-child {
+  display: flex; 
+  align-items: center;
+  gap: 10px;
   margin-top: 10px;    /* Gap between 'Users' and the line */
   padding-top: 20px;   /* Gap between the line and 'Logout' text */
   border-top: 1px solid #e5e7eb; /* Faint line between 'Users' and 'Logout'
   
   /* Ensuring the line spans the padding of the sidebar */
   width: auto; 
-  display: block;
 }
+
 
 /* Main Container Styling */
 .container {
