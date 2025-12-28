@@ -57,6 +57,7 @@ header h1 {
   display: flex; 
   align-items: center;
   gap: 10px;
+    margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
 }
 
 .sidebar a{
@@ -64,7 +65,6 @@ header h1 {
   font-size: 14px;
   font-weight: 500;
   color: #374151;
-  margin-bottom: 18px; /*Ensuring equal disance between Home, Contact, and Users */
   transition: color 0.2s ease;
   
   /*Highlight text only */
