@@ -6,7 +6,7 @@ require_once 'data_base.php';
 
 if ($_SESSION['role'] !== 'Admin') { 
     $_SESSION['error'] = "You do not have permission to add users."; 
-    header("Location: users.php"); 
+    header("Location: view_users.php"); 
     exit; 
 }
 
