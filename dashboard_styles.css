@@ -134,6 +134,7 @@ main {
   border: 1px solid #DBD9D9;
   border-collapse: collapse;
   border-spacing: 0;
+  width: 100%;
 }
 
 .table th, .table td {
@@ -144,7 +145,6 @@ main {
 
 .table th {
   background-color: #E0E0E0;
-  width: 100%;
 }
 
 
