@@ -33,6 +33,22 @@ session_start();
 
 	}
 
+	//Assigns contact to user
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') { 
+
+		if ($_POST['action'] === 'assign') {
+					
+			$stmt = $conn->prepare("UPDATE contacts SET assigned_to = :user_id WHERE id = :contact_id"); 
+			$stmt->execute([ 'user_id' => $_SESSION['id'], 'contact_id' => $_POST['contact_id']]);
+			
+			//Allows updated info to be reflected upon refresh
+			header("Location: view_contact.php?email=". urlencode($_POST['email']));
+			exit;
+
+		}
+
+	}
+
 	//GET request + user input sanitisation
 	$email = isset($_GET['email']) ? filter_var($_GET['email'], FILTER_SANITIZE_EMAIL) : null;
 
