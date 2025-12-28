@@ -111,7 +111,6 @@ header h1 {
   flex: 1;
   padding: 15px;
   background-color: #E0E0E0;
-  height: 800px;
 }
 
 .users {
@@ -126,7 +125,7 @@ header h1 {
 
 .table th, .table td {
   border: 1px solid #E0E0E0;
-  padding: 10px 30px;
+  padding: 10px 50px;
 }
 
 .table th {
